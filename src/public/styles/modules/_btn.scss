@@ -1,0 +1,81 @@
+.btn {
+  @include btn;
+  display: inline-block;
+  &-menu {
+    height: 100%;
+    width: 77px;
+    float: left;
+    border-right: 1px solid $pink;
+    padding: 10px;
+    background: #FFF;
+
+    line-height: 0.75em;
+    color: $pink;
+    font-size: 15px;
+    @include breakpoint(min,768px) {
+      float: left;
+    }
+  }
+  &-textWrapper {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+
+    font-size: 14px;
+  }
+  // THE TEXT - GENERALLY A FEW CHARACTERS
+  &-textContent {
+    display: block;
+    &-menuText {
+      font-size: 12px;
+      margin-top: 10px;
+      display: block;
+      position: relative;
+    }
+
+    &--menu,
+    &--close {
+    line-height: 0.75em;
+    padding-top: 10px;
+    transition:
+      transform .4s ease-in-out,
+      opacity .2s .2s ease-in-out;
+    }
+    &--close {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      .menu-is-opened & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-20px);
+      }
+    }
+    &--menu {
+      .menu-is-opened & {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-30px);
+      }
+    }
+  }
+  // .btn.back-to-top -- BACK TO TOP BTN
+  &-back-to-top {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    padding: 0;
+    right: 5%;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+
+    transition: customTrans(all);
+    //.btn.back-to-top.is-visible {
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

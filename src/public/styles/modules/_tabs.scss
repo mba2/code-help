@@ -1,0 +1,160 @@
+// MODULE
+.tabs {
+    padding-bottom: 40px;
+    //MODULE SUBCOMPONENTS
+    &-nav {
+        width: 100vw;
+        display: table;
+        table-layout: fixed;
+        margin-left: -4.5vw;
+        box-shadow: 0px 4px 1px 0px rgba(2, 2, 2, 0.22);
+
+        text-align: center;
+
+        //  THIS ADJUSTMENT IS REQUIRED 'CAUSE THE MAIN CONTAINER RECEIVES A max-width OF 500px AND GETS CENTERED...
+        @include breakpoint(min,500px) {
+            margin-left: calc( -4.5vw - ( (100vw - 500px) / 2) );
+        }
+
+        @include breakpoint(min,568px) {
+            width: auto;
+            margin: 0;
+            width: 60%;
+            box-shadow: none;
+        }
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-tab {
+        display: table-cell;
+        padding: 25px 0;
+        background-color: $pink;
+
+        font-size: 17px;
+        font-weight: 700;
+        color: $darkBlue;
+
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        //SUBCOMPONENT PSEUDOCLASSES
+        &:not(:first-child) {
+            border-left: 1px solid $darkBlue;
+        }
+
+        @include breakpoint(min,568px) {
+
+
+        }
+
+        //SUBCOMPONENT STATES
+        &[data-state='is-active'] {
+            background-color: $darkBlue;
+            color: $pink;
+        }
+
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-title {
+        @extend .personalData-title;
+
+        @include breakpoint(min,568px) {
+            float: left;
+            padding: 0 3%;
+        }
+
+        @include breakpoint(min,768px) {
+        }
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-arrow {
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-mainContent {
+        @include breakpoint(min,568px) {
+            padding: 0 15px;
+            border: 1px solid $lightBlue;
+        }
+
+        @include breakpoint(min,768px) {
+            position: relative;
+            padding: 0;
+        }
+
+        //SUBCOMPONENT PSEUDOCLASSES
+        &:after {
+            @include breakpoint(min,768px) {
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: calc(100% - 140px);
+                position: absolute;
+                top: 70px;
+                bottom: 0;
+                left: calc(50% - 5px);
+                background: $blue;
+            }
+        }
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-content {
+        display: none;
+
+        @include breakpoint(min,568px) {
+            @include clearfix;
+        }
+        //SUBCOMPONENT STATES
+        &[data-state='is-active'] {
+            display: block;
+        }
+
+        //SUBCOMPONENT MODIFIERS
+    }
+
+    &-contentHeading {
+        margin-bottom: 15px;
+
+        line-height: 35px;
+        font-weight: 400;
+        font-size: 22px;
+        text-align: left;
+        color: $darkBlue;
+
+        @include breakpoint(min,568px) {
+            float: left;
+            // width: 40vw;
+            width: 49.9%;
+            // margin-right: 2vw;
+            margin-bottom: 30px !important;
+            padding: 0 3%;
+        }
+
+        &:first-of-type {
+            @include breakpoint(min,568px) {
+                clear: left;
+            }
+        }
+
+        &:nth-child(2n+2) {
+            clear: both;
+        }
+
+        //SUBCOMPONENT MODIFIERS
+
+        //SUBCOMPONENT CHILDREN
+        strong {
+            @include subtitleBorder;
+            font-weight: 400;
+            color: $blue;
+        }
+    }
+
+    &-mainContent {
+        padding-top: 30px;
+        //SUBCOMPONENT MODIFIERS
+    }
+}

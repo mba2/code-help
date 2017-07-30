@@ -1,0 +1,42 @@
+.login-main-container,
+.admin-main-container {
+    max-width: 800px;
+}
+
+.login-title {
+    color: #a7a1a1;
+    text-transform: uppercase;
+    display: inline-block;
+    span {
+        display: block;
+            font-size: 16px;
+        margin: 15px 0;
+    }
+}
+
+.label-form {
+    text-transform: uppercase;
+    color:#286090;
+}
+
+.form-area {
+    text-transform: uppercase;
+    .submit-btn {
+        height: 55px;
+        text-transform: uppercase;
+    }
+    a {
+        text-transform: uppercase;
+    }
+}
+
+.table {
+    text-transform: uppercase;
+    th {
+       color:#286090;
+    }
+}
+
+.btn-logout {
+  margin: -20px 0px 0px 10px;
+}

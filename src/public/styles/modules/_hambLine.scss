@@ -1,0 +1,25 @@
+.hambLine {
+  display: inline-block;
+  width: 50%;
+  height: 2px;
+  background: $pink;
+  transition: all .6s cubic-bezier(0.45, 0.05, 0.68, 1.14);
+
+  &-top {
+    .menu-is-opened & {
+      transform: rotate(-130deg) translate(-9px,-9px)
+    }
+  }
+  &-center {
+    transition: all 1s cubic-bezier(0.9, 0, 0.04, 1.19);
+    .menu-is-opened & {
+      transform: translate(-100vw,0);
+    }
+  }
+
+  &-bottom {
+    .menu-is-opened & {
+      transform: rotate(130deg) translate(-6px,7px);
+    }
+  }
+}

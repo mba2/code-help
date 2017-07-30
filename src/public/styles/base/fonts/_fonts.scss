@@ -1,0 +1,81 @@
+// REGULAR
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-regular.woff2") format("woff2"),
+      url("../fonts/dosis-regular.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+// THIN (EXTRA THIN)
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-extralight.woff2") format("woff2"),
+      url("../fonts/dosis-extralight.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-extralight.woff") format("woff");
+  font-style: normal;
+  font-weight: 100;
+}
+// THIN
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-light.woff2") format("woff2"),
+      url("../fonts/dosis-light.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+}
+// REGULAR
+@font-face {
+  font-family: "Dosis";
+  src:
+  url("../fonts/dosis-regular.woff2") format("woff2"),
+  url("../fonts/dosis-regular.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/dosis-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+// // PRE BOLD
+// @font-face {
+//   font-family: "Dosis";
+//   src:
+//       url("../fonts/dosis-medium.woff2") format("woff2"),
+//       url("../fonts/dosis-medium.eot?#iefix") format("embedded-opentype"),
+//       url("../fonts/dosis-medium.woff") format("woff");
+//   font-style: normal;
+//   font-weight: 500;
+// }
+
+// BOLD (SEMI BOLD)
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-semibold.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-semibold.woff2") format("woff2"),
+      url("../fonts/dosis-semibold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+// BOLD (DEFAULT)
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-bold.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-bold.woff2") format("woff2"),
+      url("../fonts/dosis-bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+// BOLD (EXTRA BOLD)
+@font-face {
+  font-family: "Dosis";
+  src:
+      url("../fonts/dosis-extrabold.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/dosis-extrabold.woff2") format("woff2"),
+      url("../fonts/dosis-extrabold.woff") format("woff");
+  font-style: normal;
+  font-weight: 900;
+}

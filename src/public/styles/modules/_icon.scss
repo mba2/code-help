@@ -1,0 +1,65 @@
+.icon {
+
+  // MODULE PSEUDO CLASSES OR STATES
+  &:before,
+  &:after {
+  }
+
+  &:before{ }
+  &:after { }
+
+
+  &:after ,
+  &:active {   }
+
+  &:after { }
+  &:active { }
+
+  // MODULE STATES
+  &:hover,
+  &:active {
+    &:before {
+    }
+  }
+  // MODULE CHILD ELEMENTS
+  &-svg {
+
+  }
+
+  // MODIFIERS/VARIATIONS
+  .personalData-contact & {
+
+    display: inline-block;
+    width: 30px;
+    margin-right: 10px;
+
+    text-align: center;
+
+    transition: all .4s ease-in-out;
+
+    @include breakpoint(min,568px) {
+      width: auto;
+      display: block;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  .personalData-line a:hover & {
+      @include breakpoint(min,1024px) {
+          transform: translateY(-5px);
+      }
+  }
+
+  // THIS MODULE WHEN IT' INSIDE A 'LAYOUT' NAMED .l-footer
+  .l-footer & {
+    width: 20px;
+    height: 20px;
+    fill: $pink;
+    vertical-align: middle;
+    margin-top: -10px;
+
+    transition: fill ease-in-out .3s;
+  }
+
+}

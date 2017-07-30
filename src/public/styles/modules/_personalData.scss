@@ -1,0 +1,363 @@
+
+// MODULE
+.personalData {
+    padding-top: 35px;
+    $personalData : &;
+
+    @include breakpoint(min, 568px) {
+      @include clearfix();
+      margin-bottom: 45px;
+    }
+
+    @include breakpoint(min, 1024px) {
+      margin-bottom: 55px;
+    }
+    //MODULE SUBCOMPONENTS
+    &-title {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 25px;
+
+        font-weight: 900;
+        letter-spacing: 1px;
+        font-size: 20px;
+        color: $pink;
+
+        @include breakpoint(min, 1024px) {
+            font-size: 26px;
+        }
+
+        &:after {
+          content: "";
+          height: 3px;
+          width: 80%;
+          position: absolute;
+          bottom: -10px;
+          right: 0px;
+
+          background-color: $pink;
+        }
+
+        &--education {
+            @include breakpoint(min, 568px) {
+                margin-bottom: 30px !important;
+            }
+
+            @include breakpoint(min, 768px) {
+                margin-right: 20px;
+
+                font-size: 27px;
+            }
+        }
+
+        &--goal {
+            @include breakpoint(min, 568px) {
+                margin-bottom: 30px;
+            }
+
+            @include breakpoint(min, 768px) {
+                margin-right: 20px;
+
+                font-size: 27px;
+            }
+        }
+    }
+
+    &-subtitle {
+        padding-left: 30px;
+
+        font-weight: 400;
+        font-size: 22px;
+        text-align: left;
+        color: $blue;
+
+        @include breakpoint(min,1024px) {
+        }
+
+        span {
+          position: relative;
+          @include subtitleBorder;
+        }
+
+        &--goal {
+            padding-left: 5px;
+            @include breakpoint(min,568px) {
+                padding-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        &--education {
+            padding-left: 5px;
+            @include breakpoint(min,568px) {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &-group {
+      position: relative;
+      // padding: 15px 0;
+
+      //SUBCOMPONENT MODIFIERS
+      &--info {
+        display: flex;
+        justify-content: center;
+        padding: 0 10% 20px;
+        @include groupBottomBorder();
+
+        @include breakpoint(min,568px) {
+            padding: 0 0 10px 0;
+        }
+      }
+
+      &--education {
+        padding: 20px 0 8px;
+
+        @include breakpoint(min,568px) {
+            padding: 0;
+        }
+
+        @include breakpoint(min,768px) {
+            float: left;
+            padding-top: 7px;
+        }
+      }
+    }
+
+    &-line {
+      color: $blue;
+      font-size: 23px;
+
+      @include breakpoint(min, 768px) {
+          font-size: 22px;
+          font-weight: 400;
+      }
+
+      a {
+          display: inline-block;
+
+          &:hover {
+
+          }
+      }
+    }
+
+    &-text {
+        transition: color .4s ease-in-out;
+
+        a:hover & {
+
+            @include breakpoint(min,1024px) {
+                color: $pink;
+            }
+        }
+    }
+
+    &-name {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 7.5vw;
+        line-height: 1.2;
+        letter-spacing: 1px;
+        color: $pink;
+
+        @include breakpoint(min, 568px) {
+            width: 65%;
+            float: left;
+
+            text-align: left;
+            font-weight: 300;
+            font-size:4vw;
+        }
+
+        @include breakpoint(min, 768px) {
+            font-size: 32px;
+        }
+
+        strong {
+          font-weight: 900;
+        }
+    }
+
+    &-info {
+        padding-top: 20px;
+
+        @include breakpoint(min, 568px) {
+            width: 35%;
+            float: left;
+            padding-top: 0;
+        }
+
+        @include breakpoint(min, 768px) {
+            margin-top: 10px;
+        }
+
+    }
+
+    &-contact {
+        // @include centralize(320px, 30px auto);
+        position: relative;
+        padding: 30px 0;
+        // FOR 'ART DIRECTION' THIS SECTION WILL INHERIT AS SPECIFIC STYLE USED FOR .personalData-group ELEMENTS
+        @include groupBottomBorder();
+
+        @include breakpoint(min, 568px) {
+            display: table;
+            width: 100%;
+            padding: 40px 0 15px;
+
+            text-align: center;
+
+            &::before {
+                width: 90% !important;
+            }
+        }
+
+        @include breakpoint(min, 768px) {
+            padding: 45px 0 20px;
+        }
+
+        //SUBCOMPONENT'S CHILDREN
+        > .personalData-line {
+          margin: 15px auto;
+
+          @include breakpoint(min, 568px) {
+              display: table-cell;
+          }
+        } // .personalData .personalData-line
+
+        .personalData-text {
+            display: inline-block;
+
+            @include breakpoint(min, 568px) {
+                vertical-align: text-bottom;
+            }
+
+            @include breakpoint(min, 768px) {
+                font-size: 24px;
+                font-weight: 500;
+            }
+        } //.personalData .personalData-text
+
+        .icon-svg {
+            fill: $pink;
+            width: 30px;
+            height: 30px;
+
+            @include breakpoint(min, 568px) {
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                vertical-align: bottom;
+            }
+
+            &--email {
+                position: relative;
+                top: 2px;
+            }
+        }
+      }
+
+    &-email,
+    &-git {
+        font-size: 22px;
+
+        @include breakpoint(min,568px) {
+            font-size: 22px;
+        }
+    }
+
+    &-tel {
+        font-size: 19px;
+
+        @include breakpoint(min,568px) {
+            font-size: 18px;
+        }
+
+        .personalData-text {
+            @include breakpoint(min,768px) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &-age {
+      padding-right: (33px / 2);
+    }
+
+    &-birthPlace {
+          padding-left: (33px / 2);
+      }
+
+    &-goal {
+      padding: 30px 0 45px;
+
+      @include breakpoint(min, 568px) {
+          width: 38%;
+          float: left;
+          padding: 45px 0 0 0;
+      }
+
+      @include breakpoint(min, 768px) {
+          @include clearfix;
+          padding: 40px 0 0;
+      }
+
+      @include breakpoint(min, 1024px) {
+          padding: 55px 0 0;
+      }
+
+      .personalData-subtitle {
+          @include breakpoint(min, 768px) {
+              display: inline-block;
+              position: relative;
+              top: 3px;
+          }
+      }
+    }
+
+    &-education {
+        padding-bottom: 40px;
+
+        @include breakpoint(min,568px) {
+            width: 62%;
+            float: left;
+            padding: 35px 0 0 7vw;
+
+            text-align: center;
+        }
+
+        @include breakpoint(min,768px) {
+            @include clearfix;
+            padding: 40px 0 0;
+
+            text-align: left;
+        }
+
+        @include breakpoint(min, 1024px) {
+            padding: 55px 0 0;
+        }
+
+        .personalData-title {
+            margin-bottom: 10px;
+
+            @include breakpoint(min,768px) {
+                // vertical-align: top;
+                display: block;
+                float: left;
+            }
+        }
+
+        .personalData-subtitle {
+
+          &:first-child {
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+    //MODULE'S MOFIFIERS
+}
+
+// MODULES, SUBCOMPONENTS ETC MIXINGS

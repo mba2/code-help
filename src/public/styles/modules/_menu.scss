@@ -1,0 +1,102 @@
+
+.menu {
+  width: 100%;
+  text-align: center;
+  @include breakpoint(min,768px) {      // MAKE THE MENU FIT THE ENTIRE VERTICAL SPACE OF <nav> ELEMENT
+    height: 100%;
+  };
+  //MODULE VARIATIONS
+  &-header {
+    @include breakpoint(min,1024px) {
+      // @include clearfix();
+      // float: right;
+      // display: inline-block;
+      height: 100%;
+      text-align: right;
+    }
+  }
+
+  &-footer {
+    height: 100%;
+    @include clearfix;
+  }
+
+  &-list {
+    // MAKE THE MENU FIT THE ENTIRE VERTICAL SPACE OF <nav> ELEMENT
+    @include breakpoint(min,667px) {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+    @include breakpoint(min,768px) {
+      height: 100%;
+    //   display: table;
+    //   table-layout: fixed;
+    //   width: 100%;
+    };
+    @include breakpoint(min,1024px) {
+      // float: right;
+      // width: auto !important;
+      display: block;
+      table-layout: unset;
+    }
+  }
+  // .menu-listItem
+  &-listItem {
+    width: 100%;
+    height: 55px;
+    border-left: 4px solid $pink;
+    line-height: 55px;
+    text-align: center;
+    font-size: 16px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $pink;
+    }
+    @include breakpoint(min,667px) {        // FOR LARGER SMARTPHONES THE LIST WILL FIT THE ENTIRE SCREEN SO ALL LIST ITEM WILL BECOME A 'TABLE CELL'
+      display: table-cell;
+      border-bottom: none !important;   // REMOVE BORDER-BOTTOM FOR ALL ITEMS
+      border-left: none !important;    // AND A BORDER-RIGHT
+    }
+    @include breakpoint(min,768px) {     // TABLET BREAKPOINT
+      border-bottom: 1px solid #666;
+      vertical-align: middle;
+      height: 100%;
+    }
+    @include breakpoint(min,1024px) {
+      display: inline-block;
+      width: auto;
+      margin-left: -3px;
+
+      font-size: 25px;
+      font-weight: 100;
+      @include linkHoverEffect();
+
+      // WHEN  .menu-listItem IS HOVERED
+      &:hover {
+      
+        > a {
+          color: #FFF;
+        }
+      }
+    }
+    // VARIATIONS
+    // .menu-listItem .has-drop
+    &.has-drop {
+
+      // .menu-listItem.has-drop:hover
+      &:hover {
+        .dropdown {
+          visibility: visible;
+          opacity: 1;
+          transition: customTrans(opacity, $time: .4s);
+        }
+      }
+
+
+    }
+    // .menu-listItem PSEUDO CLASSES
+    // .menu-listItem CHILDREN ELEMENTS
+
+  }
+}

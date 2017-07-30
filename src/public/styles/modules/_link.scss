@@ -1,0 +1,145 @@
+.link {
+  position: relative;
+
+  // MODULE PSEUDO CLASSES
+  &:before,
+  &:after {
+    transition: background ease-in-out .3s;
+  }
+
+  &:before{ }
+  &:after { }
+
+  // MODULE STATES
+  &:hover,
+  &:active {
+    &:before {
+      background-color: $linkHoverFooter;
+    }
+  }
+
+  // MODULE CHILDREN ELEMENTS
+  a {
+    @media SCREEN AND (min-width: 568px) {
+    }
+  }
+
+  // ==== MODULE VARIATIONS ===== //
+  // .link-footer
+  &-footer {
+    height: 40px;
+    line-height: 40px;
+    display: block;
+
+    letter-spacing: 1px;
+    text-align: center;
+
+    transition: color ease-in-out .3s;
+    &:hover {
+      color: $linkHoverFooter;
+
+      svg {
+        fill: $linkHoverFooter;
+      }
+    }
+  }
+  // .link-socials
+  &-socials {
+    @include clearfix();
+    @include breakpoint(min,568px) {
+      width: 50%;
+      height: 100%;
+      float: right;
+    }
+    @include breakpoint(min,768px) {
+      display: table;
+      table-layout: fixed;
+    }
+
+  }
+  // .link-menu
+  &-menu {
+
+    //  .menu-header .link-menu //
+    .menu-header & {
+      padding: 0 30px;
+
+      @include breakpoint(min,768px) {
+          padding: 0;
+      }
+      @include breakpoint(min,1024px) {
+          height: 100%;
+          padding: 10px 15px 0;
+      }
+    }
+    //  link-socials .link-menu //   MENU LINKS ARE GROUPED INSIDE A WRAPPER FOR SOCIAL MEDIA LINKS
+    .link-socials & {
+      @include breakpoint(min,768px) {
+        display: table-cell;
+        width: calc(100% / 3);
+        vertical-align: middle;
+      }
+      // link-socials .link-menu PSEUDO CLASSES
+      &:before {
+        @include breakpoint(min,1024px) {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: 1px;
+          height: 40px;
+          background: $pink;
+          // top: calc(50% - 20px);
+          left:0;
+
+          transition: transform .4s ease-in-out;
+        }
+      }
+      // link-socials .link-menu STATES
+      &:hover {
+        &:before {
+          @include transform(scaleY(1.5));
+          background: $linkHoverFooter;
+        }
+      }
+    }
+  }
+  // .link-email
+  &-email {
+    clear: both;
+    height: 44px;
+    line-height: 44px;
+    @include breakpoint(min,568px) {
+      float: left;
+      width: 50%;
+      height: 100%;
+
+      line-height: 125px;
+    }
+    @include breakpoint(min,1024px) {
+      text-align: center;
+    }
+    // CHILD ELEMENTS of .link-email
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      word-wrap: break-word;
+      text-overflow: ellipsis;
+      @include breakpoint(min,1024px) {
+        font-size: 22px;
+        letter-spacing: 4px;
+      }
+    }
+  }
+  &-linkedin {
+  }
+  &-twitter {
+  }
+
+  &-twitter,
+  &-linkedin {
+
+    // ==== CHILD ELEMENTS ===== //
+
+  }
+}

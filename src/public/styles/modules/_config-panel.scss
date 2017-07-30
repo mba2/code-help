@@ -1,0 +1,14 @@
+// MODULE'S MAIN RULE
+.configPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+//.configPanel 'S SUBCOMPONENTS
+.configPanel-icon {
+  width: 32px;
+  height: 32px;
+
+  background-color: $pink;
+  cursor: pointer;
+}

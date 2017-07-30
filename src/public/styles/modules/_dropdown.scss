@@ -1,0 +1,50 @@
+.dropdown {
+  display: none;
+  position: absolute;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: customTrans(visibility, $time: .65s),
+              customTrans(opacity, $time: .65s);
+
+  @include breakpoint(min,1024px) {
+    display: block;
+  }
+  // MODULE PSEUDO CLASSES
+  // MODULE STATES
+  // MODULE VARIATIONS
+  &-header {
+    width: 181px;
+    background: rgb(255, 255, 255);
+    top: calc(100% - 1px);
+    left: 0;
+
+    line-height: 60px;
+  }
+  // MODULE CHILD ELEMENTS
+
+  // .dropdown-item
+  &-item {
+    border: 1px solid $pink;
+
+    transition: customTrans(background-color),
+                customTrans(color);
+    // .dropdown-item:first-child
+    &:first-child {
+      border-top-width: 4px;
+    }
+    // .dropdown-item:hover
+    // .dropdown-item:active
+    &:hover,
+    &:active {
+      background-color: $pink;
+
+      color: #FFF;
+    }
+  }
+  // .dropdown-link
+  &-link {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,49 @@
+.logo {
+  display: inline-block;
+  background: #FFF;
+
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  &-header {
+    width: calc(100% - 77px);
+    height: 100%;
+    float: right;
+    vertical-align: top;
+    position: relative;
+
+    text-transform: lowercase;
+    line-height: 77px;
+    text-align: center;
+
+    @include breakpoint(min,768px) {     //TABLET BREAKPOINT
+      width: 240px;
+      float: left;
+      margin-left: 0px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 1px;
+        height: 60%;
+        margin: auto 0;
+
+        background: $pink;
+      }
+    }
+
+    @include breakpoint(min,1024px) {
+      width: 26%;
+
+      font-size: 25px;
+      font-weight: 100;
+      text-align: left;
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.home {
+    position: absolute;
+    top: 110px;
+    left: 10vw;
+    z-index: 2;
+
+    @include breakpoint(min,768px) {
+        top: 210px;
+        
+    }
+    
+    // @include breakpoint(min,568px) {
+        // width: 200px;
+        // height: 150px;
+        // top: 10vh;
+        // left: 0;
+        // bottom: 0;
+        // right: 0;
+        // margin: 0 auto;
+        /* min-width: 200px; */
+        /* width: 70vw; */
+    // }
+    //MODULE'S SUBCOMPONENTS
+    &-title {
+        font-size: 50px;
+        letter-spacing: 3px;
+        font-weight: 100;
+        
+        @include breakpoint(min,768px) {
+            font-size: 90px;
+        }
+
+        //SUBCOMPONENT'S MODIFIERS
+        &--front {
+            position: relative;
+            padding-bottom: 30px;
+            color: #FFF;
+
+
+            @include breakpoint(min,768px) {
+                transform: translateX( calc(-352.1px - 5vw) );
+                opacity: 0;
+                animation: home__title--front 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            }
+
+            &:after {
+                content: "";
+                display: inherit;
+                position: relative;
+                top: 30px;
+                background-color: #FFF;
+                height: 2px;
+
+            }
+            
+            @include breakpoint(min,768px) {
+                &:after {
+                    transform: scaleX(0); 
+                    animation: home__titlebar 1s cubic-bezier(0.55, -0.06, 0.34, 1.35) .5s forwards;
+                }
+            }
+        }
+
+        &--dev{
+            padding-top: 15px;
+
+            color: $pink;
+
+            @include breakpoint(min,768px) {
+                opacity: 0;
+                transform: translateY(100px);
+                animation: home__title--dev 1s cubic-bezier(0.55, -0.06, 0.34, 1.35) forwards;
+            }
+        }
+    }
+
+}

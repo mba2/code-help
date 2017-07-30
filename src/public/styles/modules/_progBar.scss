@@ -1,0 +1,13 @@
+.progBar {
+  width: 100%;
+  height: 4px;
+  clear: both;
+  position: relative;
+  z-index: -1;
+  background: $pink;
+
+  @include breakpoint(min,1024px){
+    width: 100vw;
+    margin-left: -4.8vw;
+  }
+}

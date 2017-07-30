@@ -1,0 +1,40 @@
+.l-footer {
+  background: #fff;
+  color: $pink;
+  font-size: 19px;
+  @include breakpoint(min,568px) {
+    height: 125px;
+  }
+  @include breakpoint(min,1024px) {
+    font-size: 21px;
+  }
+
+  .wrapper {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 19px;
+
+    &:before {
+      // content: "";
+      // position: absolute;
+      // display: inline-block;
+      // width: 1px;
+      // height: 37px;
+      // background: $pink;
+      // top: 50%;
+      // left: calc(50% - .5px);
+      @include breakpoint(min,568px) {
+      }
+    }
+
+    @include breakpoint(min,568px) {
+      // height: 125px;
+    }
+    @include breakpoint(min,768px) {
+      // margin:0 0 0 auto;
+      width: 100%;
+    }
+  }
+}
