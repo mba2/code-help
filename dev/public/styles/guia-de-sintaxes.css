@@ -1,33 +1,44 @@
+/* line 1, ../../../src/public/styles/guia-de-sintaxes.scss */
 .login-main-container,
 .admin-main-container {
   max-width: 800px; }
 
+/* line 6, ../../../src/public/styles/guia-de-sintaxes.scss */
 .login-title {
   color: #a7a1a1;
   text-transform: uppercase;
   display: inline-block; }
+  /* line 10, ../../../src/public/styles/guia-de-sintaxes.scss */
   .login-title span {
     display: block;
     font-size: 16px;
     margin: 15px 0; }
 
+/* line 17, ../../../src/public/styles/guia-de-sintaxes.scss */
 .label-form {
   text-transform: uppercase;
   color: #286090; }
 
+/* line 22, ../../../src/public/styles/guia-de-sintaxes.scss */
 .form-area {
   text-transform: uppercase; }
+  /* line 24, ../../../src/public/styles/guia-de-sintaxes.scss */
   .form-area .submit-btn {
     height: 55px;
     text-transform: uppercase; }
+  /* line 28, ../../../src/public/styles/guia-de-sintaxes.scss */
   .form-area a {
     text-transform: uppercase; }
 
+/* line 33, ../../../src/public/styles/guia-de-sintaxes.scss */
 .table {
   text-transform: uppercase; }
+  /* line 35, ../../../src/public/styles/guia-de-sintaxes.scss */
   .table th {
     color: #286090; }
 
+/* line 40, ../../../src/public/styles/guia-de-sintaxes.scss */
 .btn-logout {
   margin: -20px 0px 0px 10px; }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImd1aWEtZGUtc2ludGF4ZXMuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztFQUVFLGlCQUFpQixFQUFFOztBQUVyQjtFQUNFLGVBQWU7RUFDZiwwQkFBMEI7RUFDMUIsc0JBQXNCLEVBQUU7RUFDeEI7SUFDRSxlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLGVBQWUsRUFBRTs7QUFFckI7RUFDRSwwQkFBMEI7RUFDMUIsZUFBZSxFQUFFOztBQUVuQjtFQUNFLDBCQUEwQixFQUFFO0VBQzVCO0lBQ0UsYUFBYTtJQUNiLDBCQUEwQixFQUFFO0VBQzlCO0lBQ0UsMEJBQTBCLEVBQUU7O0FBRWhDO0VBQ0UsMEJBQTBCLEVBQUU7RUFDNUI7SUFDRSxlQUFlLEVBQUU7O0FBRXJCO0VBQ0UsMkJBQTJCLEVBQUUiLCJmaWxlIjoiZ3VpYS1kZS1zaW50YXhlcy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4tbWFpbi1jb250YWluZXIsXHJcbi5hZG1pbi1tYWluLWNvbnRhaW5lciB7XHJcbiAgbWF4LXdpZHRoOiA4MDBweDsgfVxyXG5cclxuLmxvZ2luLXRpdGxlIHtcclxuICBjb2xvcjogI2E3YTFhMTtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIGRpc3BsYXk6IGlubGluZS1ibG9jazsgfVxyXG4gIC5sb2dpbi10aXRsZSBzcGFuIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgbWFyZ2luOiAxNXB4IDA7IH1cclxuXHJcbi5sYWJlbC1mb3JtIHtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xyXG4gIGNvbG9yOiAjMjg2MDkwOyB9XHJcblxyXG4uZm9ybS1hcmVhIHtcclxuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyB9XHJcbiAgLmZvcm0tYXJlYSAuc3VibWl0LWJ0biB7XHJcbiAgICBoZWlnaHQ6IDU1cHg7XHJcbiAgICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyB9XHJcbiAgLmZvcm0tYXJlYSBhIHtcclxuICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IH1cclxuXHJcbi50YWJsZSB7XHJcbiAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgfVxyXG4gIC50YWJsZSB0aCB7XHJcbiAgICBjb2xvcjogIzI4NjA5MDsgfVxyXG5cclxuLmJ0bi1sb2dvdXQge1xyXG4gIG1hcmdpbjogLTIwcHggMHB4IDBweCAxMHB4OyB9XHJcblxyXG4vKiMgc291cmNlTWFwcGluZ1VSTD1ndWlhLWRlLXNpbnRheGVzLmNzcy5tYXAgKi9cclxuIl19 */
+
+/*# sourceMappingURL=guia-de-sintaxes.css.map */
