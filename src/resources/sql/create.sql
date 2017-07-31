@@ -7,14 +7,15 @@ DROP TABLE IF EXISTS users_CODE_HELP;
 CREATE TABLE users_CODE_HELP(
   users_id    TINYINT(5) AUTO_INCREMENT NOT NULL,
   users_name  VARCHAR(40) NOT NULL,
+  users_pass  VARCHAR(255) NOT NULL UNIQUE,
   users_nick  VARCHAR(20) NULL,
   users_email VARCHAR(100) NOT NULL UNIQUE,
   PRIMARY KEY(users_id)
 );
 
 INSERT INTO users_CODE_HELP VALUES
-(NULL,'Mario Brusarosco', "Mario", "mariobrusarosco@gmail.com"),
-(NULL,'Mario Brusarosco', "Marinho Mala", "marinhomala@hotmail.com");
+(NULL,'Mario Brusarosco', "Mario","123", "mariobrusarosco@gmail.com"),
+(NULL,'Mario Brusarosco', "Marinho Mala","1234", "marinhomala@hotmail.com");
 
 
 -- DROP TABLE IF EXISTS syntax;
