@@ -16,7 +16,7 @@ if(empty($_POST)){
   $conn = DB::connect();
   //SET THE CURRENT DATABASE//
   // $currDB = "syntaxes";        //LOCAL//
-  $currDB = "`u845380189_sint`";    //REMOTE//
+  $currDB = "`syntaxes`";    //REMOTE//
   //SET THE CURRENT MAIN TABLE//
   $currTB = "`example`";
   //CREATE A DELETE SQL STATEMENT//

@@ -1,12 +1,12 @@
 <?php
-  session_start();
-if(!isset($_SESSION['aut'])){
-  echo "Por favor, realize o login......";
-  header("refresh: 2; url=login.php");
-}else {
+//   session_start();
+// if(!isset($_SESSION['aut'])){
+//   echo "Por favor, realize o login......";
+//   header("refresh: 2; url=login.php");
+// }else {
 
 //   HEADER   //
-require_once("includes/head.html");
+require_once("../resources/includes/head.html");
  ?>
 <body>
 
@@ -14,10 +14,10 @@ require_once("includes/head.html");
 
   <?php
     //    NAVIGATION   //
-    require_once('includes/navigation.html');
+    require_once('../resources/includes/navigation.html');
 
     //TABLE OF A SEARCH RESULTS//
-    require_once("includes/table-results.html");
+    require_once("../resources/includes/table-results.html");
   ?>
 
   </main>
@@ -32,5 +32,5 @@ require_once("includes/head.html");
 
 </html>
 <?php
-}
+// }
 ?>

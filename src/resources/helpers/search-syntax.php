@@ -30,19 +30,19 @@ if(isset($_POST['lastQuery'])){
 
     //IF NO LANGUAGE IS SELECTED...ECHO A JSON 'LOG' AND CLOSE THE PROGRAM//
     if(empty($chosenLangs)){
-      echo json_encode(array("status"=>"no language selected","msg"=>"Por favor, selecione ao menos uma linguagem"));
+      echo json_encode(array("status"=>"no language selected","msg"=>"Plase, at least, select one language."));
       return false;
     }
     //IF NO TEXT IS PASSED TO PERFORM A SEARCH... ECHO A JSON 'LOG' AND CLOSE THE PROGRAM//
     if(empty($givenString)){
-      echo json_encode(array("status"=>"no string passed","msg"=>"Por favor, digite algum texto."));
+      echo json_encode(array("status"=>"no string passed","msg"=>"Please, type something."));
       return false;
     }
     //SET THE CURRENT DATABASE//
     // $currDB = "syntaxes";        //LOCAL//
-    $currDB = "`u845380189_sint`";    //REMOTE//
+    $currDB = "syntaxes";    //REMOTE//
     //SET THE CURRENT MAIN TABLE//
-    $currTB = "`syntax`";
+    $currTB = "syntax";
     //CREATE A FILTER -> AN ARRAY CONTAINING AN CONDITION EACH LANGUAGE THAT WILL BE USED IN THE SELECT QUERY --> getLangs()//
     $sqlFilter  = getLangs($chosenLangs);
     //CREATE A WHERE CONDITION TO SEARCH FOR A PATTERN TO THE GIVEN STRING//
@@ -75,7 +75,7 @@ $affectedRows = $query->rowCount();
 $result = $query->fetchAll(PDO::FETCH_ASSOC);
 //IF NOTHING IS RETURNED... ECHO A JSON 'LOG' AND CLOSE THE PROGRAM//
 if(empty($result)){
-  echo json_encode(array("status"=>"no results found","msg"=>"Nenhum resultado encontrado."));
+  echo json_encode(array("status"=>"no results found","msg"=>"No results were found."));
   return false;
 }
 //ECHO THE QUERY RESULT//

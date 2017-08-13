@@ -42,7 +42,7 @@ var Search = {
                   selectedLangs = $form.find("input[name='lang[]']:checked"),
                          values = [],
                          string = $form.find("#search_field").val(),
-                            url = "./helpers/search-syntax.php",
+                            url = "../resources/helpers/search-syntax.php",
                     currentJSON = "";
               //STORE SOME VARIABLES//
 
@@ -209,7 +209,7 @@ var Page = {
 var Syntax = {
    openNewWindow  : function(){
                     Page.createOverlay();
-                    var $myModal = $(".my_modal").load("./includes/new-syntax.html");
+                    var $myModal = $(".my_modal").load("../resources/includes/new-syntax.html");
 
                   },
 
@@ -218,7 +218,7 @@ var Syntax = {
                       example     : {
                                       add    : function(){
                                                   var $examplesArea = $("#examples_area"),
-                                                                url = "./includes/example.html";
+                                                                url = "../resources/includes/example.html";
                                                            $.ajax({
                                                               "url"     : url,
                                                               "success" : function(response,status,xhr){
@@ -259,7 +259,7 @@ var Syntax = {
                                                                 .each(function(){
                                                                   examples.push($(this).find("textarea").val());
                                                                 }),
-                                           url  = './helpers/save-syntax.php',
+                                           url  = '../resources/helpers/save-syntax.php',
                                            data = {
                                                     'syntaxLang' : $syntaxLang,
                                                     'syntaxBody' : $syntaxBody,
@@ -351,7 +351,7 @@ var Syntax = {
                             confirm : function(){
                                     //START THE FIRST AJAX CALL -> REMOVE THE SELETED SYNTAX//
                                       var    $node = $(this),
-                                               url = "helpers/remove-syntax.php",
+                                               url = "../resources/helpers/remove-syntax.php",
                                           syntaxID = $("main").find(".selected_row").attr("data-id"),
                                               data = {
                                                         'syntaxID' : syntaxID
@@ -366,7 +366,7 @@ var Syntax = {
                                                                           Log.addSuccess(response,url);
 
                                                                           //START THE SECOND AJAX CALL -> PERFORMING THE SAME QUERY AGAIN, AFTER REMOVING A SYNTAX//
-                                                                          url  = "helpers/search-syntax.php";
+                                                                          url  = "../resources/ helpers/search-syntax.php";
                                                                           data = {
                                                                                     lastQuery : true
                                                                                  };

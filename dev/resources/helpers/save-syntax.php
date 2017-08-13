@@ -42,9 +42,9 @@ try{
 $conn = DB::connect();
 //SET THE CURRENT DATABASE//
 // $currDB = "syntaxes";        //LOCAL//
-$currDB = "`u845380189_sint`";    //REMOTE//
+$currDB = "syntaxes";    //REMOTE//
 //SET THE CURRENT MAIN TABLE//
-$currTB = "`syntax`";
+$currTB = "syntax";
 //CREATE AN SQL INSERT STATEMENT//
 $insertSQL = new InsertSQL("{$currDB}.{$currTB}","{$currTB}.syntaxID,{$currTB}.languageID,{$currTB}.syntaxBody,{$currTB}.syntaxDesc,{$currTB}.syntaxNotes",array($valuesToInsert));
 $insertSQL->convertToStr();
@@ -61,7 +61,7 @@ if($result < 1 || $result > 1){
   echo json_encode(
                   array(
                         'status' => "error",
-                        'msg'    => "Não foi possível salvar os dados no BD."
+                        'msg'    => "Database error. Please try again."
                        )
                   );
   $conn = null;
@@ -92,7 +92,7 @@ else{
   echo json_encode(
                     array(
                           'status'    => 'success',
-                          'msg'       => 'Nova sintaxe adicionada!',
+                          'msg'       => 'Great! Syntax Added!',
                           'syntaxID'  => $syntaxID
                         )
                   );
@@ -108,7 +108,7 @@ catch(PDOException $e){
   echo json_encode(
                   array(
                         'status'  => "error",
-                        'msg'     => "Não foi possível salvar os dados no BD.",
+                        'msg'     => "Database error. Please try again",
                         'addInfo' => "{$error}"
                        )
                   );
