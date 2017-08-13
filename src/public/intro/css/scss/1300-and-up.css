@@ -1,0 +1,65 @@
+@charset "UTF-8";
+@media screen and (min-width: 1301px) {
+  /* GLOBAL CLASSES
+  ========================*/
+  /* MAIN CONTAINER
+  =========================*/
+  /* HEADER
+  =========================*/
+  /* TITLE'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+  /* COMPORTAMENTO DO TÍTULO DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+  /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+  /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+  /* ASIDE BAR
+  =========================== */
+  /* FOOTER
+  =========================== */
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* FOOTER OF SYNTAX GUIDE PROJECT
+    =======================*/
+    /* END OF .project_footer*/
+    /* FOOTER OF SYNTAX GUIDE PROJECT
+    =======================*/
+    /* END OF .project_footer*/ }
+    .syntax_guide .project_header .project_title {
+      font-size: 8em; }
+    .syntax_guide .project_content .project_explanation {
+      /* SECOND SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/
+      /* THIRD SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/ }
+      .syntax_guide .project_content .project_explanation .explanation_horizontal_rule {
+        width: 90%; }
+      .syntax_guide .project_content .project_explanation .second_explanation .intro_heading {
+        padding: 3em 3.5em;
+        text-align: center;
+        font-size: 1.8em;
+        letter-spacing: 0.15em; }
+      .syntax_guide .project_content .project_explanation .second_explanation .project_figure:first-of-type {
+        width: 320px;
+        margin: 11em 0 0 10%; }
+      .syntax_guide .project_content .project_explanation .second_explanation .project_figure:last-of-type {
+        margin: 1em 1.5em 3em 16%; }
+    .syntax_guide .project_footer .project_link {
+      display: block;
+      width: 361px;
+      margin: 0 auto; }
+    .syntax_guide .project_footer {
+      padding: 4em 0; }
+      .syntax_guide .project_footer .project_figure img {
+        width: 1152px; }
+      .syntax_guide .project_footer .project_link {
+        width: 300px;
+        border-radius: 0.25em;
+        font-size: 1.2em; }
+
+  /* CODE EDITOR STYLES
+  =================================*/
+  /* FANTASY PES STYLES
+  =================================*/
+  /* STYLES TO THE LINKS: AT MAIN NAVIGATION BAR AND THE FOOTER
+  ==============================================================*/ }
+
+/*# sourceMappingURL=1300-and-up.css.map */

@@ -1,0 +1,19 @@
+@media SCREEN and (min-width: 640px) and (min-height: 320px) {
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* END OF SYNTAX GUIDE .project_header */ }
+    .syntax_guide .project_header {
+      padding: 8.5vh 4vw 20vh 4vw; }
+      .syntax_guide .project_header .project_title {
+        margin-bottom: 2vh;
+        font-size: 2.5em;
+        font-weight: 900; }
+      .syntax_guide .project_header .project_subtitle {
+        margin-top: 8.5vh;
+        font-size: 1.2em; }
+
+  /* END OF .syntax_guide */ }
+/* END OF MEDIA QUERY */
+
+/*# sourceMappingURL=md-640-and-320-up.css.map */

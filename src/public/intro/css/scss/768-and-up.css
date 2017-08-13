@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@media screen and (min-width: 769px) {
+  /* GLOBAL CLASSES
+  ========================*/
+  /* MAIN CONTAINER
+  =========================*/
+  /* HEADER
+  =========================*/
+  /* TITLE'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+  /* COMPORTAMENTO DO TÍTULO DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+  /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+  /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+  .main_header .portfolio_title {
+    color: #8c8c8c; }
+
+  /* ASIDE BAR
+  =========================== */
+  .projects_list_section .projects_list {
+        /* END OF ,main_nav_project_link/
+
+
+        /* SYNTAX GUIDE LINK: AT MAIN NAVIGATION BAR
+        /* LINK DO GUIA DE SINTAXES: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+        ==============================================================*/
+    /* CODE EDITOR LINK: AT MAIN NAVIGATION BAR
+    /* LINK DO EDITOR DE TEXTO: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+    ==============================================================*/ }
+    .projects_list_section .projects_list .main_nav_project_link {
+      /* LINKS STYLES: AT MAIN NAVIGATION BAR
+      /* ESTILOS PARA LINKS: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+      ==============================================================*/
+      /* END OF & > .main_nav_link */ }
+
+  /* .projects_list_section */
+  /* FOOTER
+  =========================== */
+  .footer .projects_list {
+    overflow: hidden; }
+    .footer .projects_list li {
+      float: left;
+      width: 49.99%; }
+
+  /* PROJECTS AREA
+  =================================*/
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* END OF .project_content*/
+    /* FOOTER OF SYNTAX GUIDE PROJECT
+    =======================*/
+    /* END OF .project_footer*/ }
+    .syntax_guide .project_header .project_title,
+    .syntax_guide .project_header .project_subtitle {
+      font-family: 'Dosis',sans-serif; }
+    .syntax_guide .project_header .project_title {
+      font-family: 'Dosis',sans-serif;
+      font-size: 5em; }
+    .syntax_guide .project_header .project_subtitle {
+      margin: 7.5vh 0;
+      font-size: 1.5em; }
+    .syntax_guide .project_content {
+      /* END OF .project_explanation*/ }
+      .syntax_guide .project_content .project_explanation {
+        /* SECOND SECTION OF SYNTAX GUIDE PROJECT
+        =====================*/
+        /* THIRD SECTION OF SYNTAX GUIDE PROJECT
+        =====================*/
+        /* END OF .third_explanation*/ }
+        .syntax_guide .project_content .project_explanation .second_explanation {
+          overflow: hidden; }
+          .syntax_guide .project_content .project_explanation .second_explanation .intro_heading {
+            font-size: 1.3em; }
+          .syntax_guide .project_content .project_explanation .second_explanation .project_figure:first-of-type {
+            float: left;
+            width: 30%;
+            margin: 8em 0 0 4em; }
+          .syntax_guide .project_content .project_explanation .second_explanation .project_figure:last-of-type {
+            float: right;
+            width: 50%;
+            margin: 1em 1.5em 3em 0em; }
+          .syntax_guide .project_content .project_explanation .second_explanation .simple_search_example_img {
+            width: 90%; }
+          .syntax_guide .project_content .project_explanation .second_explanation .simple_search_result_example_img {
+            width: 90%; }
+        .syntax_guide .project_content .project_explanation .third_explanation {
+          /* END OF .info_box*/ }
+          .syntax_guide .project_content .project_explanation .third_explanation .info_box .material-icons {
+            font-size: 3.5em; }
+          .syntax_guide .project_content .project_explanation .third_explanation .info_box p {
+            font-size: 1.5em; }
+    .syntax_guide .project_footer {
+      font-family: "Cabin",sans-serif; }
+      .syntax_guide .project_footer .project_link {
+        display: block;
+        width: 250px;
+        margin: 0 auto;
+        font-size: 1.2em; }
+
+  /* CODE EDITOR STYLES
+  =================================*/
+  .code_editor {
+    /* END OF CODE EDITOR .project_header */
+    /* END OF .project_content*/
+    /* FOOTER OF CODE EDITOR
+    =======================*/
+    /* END OF .project_footer*/ }
+    .code_editor .project_content {
+      /* END OF .project_explanation*/ }
+      .code_editor .project_content .project_explanation {
+        /* SECOND SECTION OF CODE EDITOR PROJECT
+        =====================*/
+        /* END OF .second_explanation */ }
+        .code_editor .project_content .project_explanation .explanation_title {
+          font-size: 2.5em; }
+        .code_editor .project_content .project_explanation .project_type {
+          font-size: 1em; }
+        .code_editor .project_content .project_explanation .intro_explanation p {
+          font-size: 1.25em; }
+        .code_editor .project_content .project_explanation .second_explanation {
+          width: 100%; }
+          .code_editor .project_content .project_explanation .second_explanation .info_box {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 1.5em auto 0 auto;
+            /* <code> TAG FOR HTML EXAMPLE */
+            /* TAG <code> PARA O EXEMPLO DE HTML */
+            /* <code> TAG FOR CSS EXAMPLE */
+            /* TAG <code> PARA O EXEMPLO DE CSS */
+            /* <code> TAG FOR JAVASCRIPT EXAMPLE */
+            /* TAG <code> PARA O EXEMPLO DE JAVASCRIPT*/
+            /* DEFAULT STYLES FOR <code> TAG */
+            /* ESTILO PADRÃO PARA A TAG <code> */ }
+            .code_editor .project_content .project_explanation .second_explanation .info_box h3 {
+              color: dimgray; }
+            .code_editor .project_content .project_explanation .second_explanation .info_box .html_code_example {
+              padding-left: 27%; }
+            .code_editor .project_content .project_explanation .second_explanation .info_box .css_code_example {
+              padding-left: 27%; }
+            .code_editor .project_content .project_explanation .second_explanation .info_box .js_code_example {
+              padding-left: 27%; }
+            .code_editor .project_content .project_explanation .second_explanation .info_box code {
+              padding-left: 27%;
+              /* STYLES TO DISPLAY HTML IN A BETTER FORMAT*/
+              /* ESTILOS PARA EXIBIR AS TAGS EM UM FORMATO MELHOR */
+              /* HTML */
+              /* CSS */
+              /* JAVASCRIPT */ }
+              .code_editor .project_content .project_explanation .second_explanation .info_box code .tag::before {
+                content: "<"; }
+    .code_editor .project_footer .project_link {
+      display: block;
+      width: 250px;
+      margin: 0 auto;
+      font-size: 1.2em; }
+
+  /* END OF .code_editor */ }
+
+/*# sourceMappingURL=768-and-up.css.map */

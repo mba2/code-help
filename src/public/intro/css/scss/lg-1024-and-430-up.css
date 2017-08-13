@@ -1,0 +1,17 @@
+@media SCREEN and (min-width: 1024px) and (min-height: 430px) {
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* END OF SYNTAX GUIDE .project_header */ }
+    .syntax_guide .project_header {
+      /* END OF SYNTAX GUIDE .more_info_icon */ }
+      .syntax_guide .project_header .project_title {
+        margin-bottom: 1vh;
+        font-size: 3.5em; }
+      .syntax_guide .project_header .project_subtitle {
+        font-size: 1.5em; }
+
+  /* END OF .syntax_guide */ }
+/* END OF MEDIA QUERY */
+
+/*# sourceMappingURL=lg-1024-and-430-up.css.map */

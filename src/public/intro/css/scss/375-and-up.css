@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@media SCREEN and (min-width: 376px) {
+  /* GLOBAL CLASSES
+  ========================*/
+  /* MAIN CONTAINER
+  =========================*/
+  /* HEADER
+  =========================*/
+  .main_header {
+    /* TITLE'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+    /* COMPORTAMENTO DO TÍTULO DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+    /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+    /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */ }
+
+  /* ASIDE BAR
+  =========================== */
+  /* FOOTER
+  =========================== */
+  /* PROJECTS AREA
+  =================================*/
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* SYNTAX GUIDE STYLES
+    =================================*/ }
+    .syntax_guide .project_content .project_explanation {
+      /* SECOND SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/
+      /* THIRD SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/ }
+      .syntax_guide .project_content .project_explanation .second_explanation .simple_search_example_img {
+        width: 70%; }
+      .syntax_guide .project_content .project_explanation .second_explanation .simple_search_result_example_img {
+        width: 85%; }
+
+  /* CODE EDITOR STYLES
+  =================================*/
+  /* FANTASY PES STYLES
+  =================================*/
+  /* STYLES TO THE LINKS: AT MAIN NAVIGATION BAR AND THE FOOTER
+  ==============================================================*/ }
+
+/*# sourceMappingURL=375-and-up.css.map */

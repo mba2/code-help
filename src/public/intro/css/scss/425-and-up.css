@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@media SCREEN and (min-width: 426px) {
+  /* GLOBAL CLASSES
+  ========================*/
+  /* MAIN CONTAINER
+  =========================*/
+  .main_wrapper.toggled {
+    right: 215px; }
+
+  /* HEADER
+  =========================*/
+  .main_header {
+    /* TITLE'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+    /* COMPORTAMENTO DO TÍTULO DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
+    /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
+    /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */ }
+    .main_header .home_anchor {
+      left: 25vw; }
+    .main_header .menu_btn.toggled {
+      right: 215px; }
+
+  /* ASIDE BAR
+  =========================== */
+  .projects_list_section {
+    width: 215px; }
+    .projects_list_section .projects_list {
+        /* END OF ,main_nav_project_link/
+
+
+        /* SYNTAX GUIDE LINK: AT MAIN NAVIGATION BAR
+        /* LINK DO GUIA DE SINTAXES: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+        ==============================================================*/
+      /* CODE EDITOR LINK: AT MAIN NAVIGATION BAR
+      /* LINK DO EDITOR DE TEXTO: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+      ==============================================================*/ }
+      .projects_list_section .projects_list .main_nav_project_link {
+        /* LINKS STYLES: AT MAIN NAVIGATION BAR
+        /* ESTILOS PARA LINKS: NA BARRA DE NAVEGAÇÃO PRINCIPAL
+        ==============================================================*/
+        /* END OF & > .main_nav_link */ }
+
+  /* FOOTER
+  =========================== */
+  /* PROJECTS AREA
+  =================================*/
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide {
+    /* SYNTAX GUIDE STYLES
+    =================================*/ }
+    .syntax_guide .project_content .project_explanation {
+      /* SECOND SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/
+      /* THIRD SECTION OF SYNTAX GUIDE PROJECT
+      =====================*/ }
+      .syntax_guide .project_content .project_explanation .second_explanation h3 {
+        padding: 2em 3em 2em 5em; }
+      .syntax_guide .project_content .project_explanation .second_explanation .simple_search_example_img {
+        width: 230px; }
+      .syntax_guide .project_content .project_explanation .second_explanation .simple_search_result_example_img {
+        width: 70%; }
+      .syntax_guide .project_content .project_explanation .third_explanation .info_box p {
+        font-size: 1.2em; }
+
+  /* CODE EDITOR STYLES
+  =================================*/
+  /* FANTASY PES STYLES
+  =================================*/
+  /* STYLES TO THE LINKS: AT MAIN NAVIGATION BAR AND THE FOOTER
+  ==============================================================*/ }
+
+/*# sourceMappingURL=425-and-up.css.map */

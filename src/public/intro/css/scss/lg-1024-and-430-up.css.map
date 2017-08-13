@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,6DAAgE;EAE9D;qCACmC;EACnC,aAAa;IAoCV,yCAAyC;IAlC1C,6BAAe;MAiCZ,yCAAyC;MA9B1C,4CAAc;QACZ,aAAa,EAAE,GAAG;QAClB,SAAS,EAAE,KAAK;MAIlB,+CAAkB;QAIhB,SAAS,EAAE,KAAK;;EAsBrB,0BAA0B;AAC5B,wBAAwB",
+"sources": ["lg-1024-and-430-up.scss"],
+"names": [],
+"file": "lg-1024-and-430-up.css"
+}

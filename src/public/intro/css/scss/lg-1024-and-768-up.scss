@@ -1,0 +1,51 @@
+@media SCREEN AND (min-width: "1024px") AND (min-height:"768px"){
+
+  /* SYNTAX GUIDE STYLES
+  =================================*/
+  .syntax_guide{
+
+    .project_header{
+      // padding: 8.5vh 4vw 20vh 4vw;
+
+      .project_title{
+        margin-bottom: 1vh;
+        font-size: 4.5em;
+        // font-weight: 900;
+      }
+
+      .project_subtitle {
+        margin-top: 8.5vh;
+        // margin-bottom: 15.5vh;
+
+        font-size: 1.8em;
+        letter-spacing: 0.15em;
+      }
+
+      .more_info_icon{
+        // z-index: 3;
+        // display: block;
+        width: 8.9em;
+        //
+        // margin: 0 auto;
+        padding: 0.8em 1.5em;
+        // border: 1px solid #03afb3;
+        // border-radius: 0.2em;
+        //
+        // color: #03afb3;
+        // font-variant: small-caps;
+        font-size: 1.3em;
+        letter-spacing: 0.1em;
+        // text-align: center;
+        //
+        // cursor: pointer;
+        // transition: box-shadow .5s ease-in-out;
+
+        &:active,&:hover{
+          box-shadow: 300px 0 0 0 $blueSyntaxGuide inset;
+
+          color: rgb(255,255,255);
+        }
+      }/* END OF SYNTAX GUIDE .more_info_icon */
+    }/* END OF SYNTAX GUIDE .project_header */
+  }/* END OF .syntax_guide */
+}/* END OF MEDIA QUERY */
