@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS syntaxes;
-CREATE DATABASE syntaxes;
-USE syntaxes;
+-- DROP DATABASE IF EXISTS syntaxes;
+-- CREATE DATABASE syntaxes;
+USE u176276522_ch;
 
 DROP TABLE IF EXISTS language;
 CREATE TABLE language(

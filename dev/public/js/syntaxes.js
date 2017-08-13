@@ -224,7 +224,7 @@ var Syntax = {
                 data: data,
                 success: function(response) {
                     Log.addSuccess(response, url);
-                    url = "../resources/ helpers/search-syntax.php";
+                    url = "../resources/helpers/search-syntax.php";
                     data = {
                         lastQuery: true
                     };

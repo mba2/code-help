@@ -42,7 +42,7 @@ try{
 $conn = DB::connect();
 //SET THE CURRENT DATABASE//
 // $currDB = "syntaxes";        //LOCAL//
-$currDB = "syntaxes";    //REMOTE//
+$currDB = "u176276522_ch";    //REMOTE//
 //SET THE CURRENT MAIN TABLE//
 $currTB = "syntax";
 //CREATE AN SQL INSERT STATEMENT//

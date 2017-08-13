@@ -366,7 +366,7 @@ var Syntax = {
                                                                           Log.addSuccess(response,url);
 
                                                                           //START THE SECOND AJAX CALL -> PERFORMING THE SAME QUERY AGAIN, AFTER REMOVING A SYNTAX//
-                                                                          url  = "../resources/ helpers/search-syntax.php";
+                                                                          url  = "../resources/helpers/search-syntax.php";
                                                                           data = {
                                                                                     lastQuery : true
                                                                                  };

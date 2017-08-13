@@ -36,10 +36,8 @@ final class DB{
       //   // print_r($iniConfig);
       // }
 
-      $myPDO = new PDO("mysql:host=localhost;dbname=syntaxes","root","ma240787");             //LOCAL//
-      // $conexao = mysqli_connect("localhost","u845380189_eniac","eniac2016","u845380189_sint");
+      // $myPDO = new PDO("mysql:host=localhost;dbname=syntaxes","root","ma240787");             //LOCAL//
       // $myPDO = new PDO("mysql:host=localhost;dbname=u845380189_sint","u845380189_eniac","eniac2016"); //REMOTE//
-
       // try{
           //CREATE A PDO OBJECT WITHOUT A PORT VALUE//
           // if(!empty($dbPort)){
@@ -50,9 +48,10 @@ final class DB{
           // }
 
         //SET SOME PDO PROPERTIES E RETURN A INSTANCE OF A PDO OBJECT//
-        $myPDO->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+          $myPDO = new PDO("mysql:host=mysql.hostinger.com.br;dbname=u176276522_ch","u176276522_me","594hfAJIsnk9");
+          $myPDO->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        return  $myPDO;
       // }
-        return $myPDO;
       // catch(PDOException $pdoError){
       //   echo "Message: {$pdoError->getMessage()}<br>";
       //   echo "Code: {$pdoError->getCode()}";

@@ -16,6 +16,7 @@ function __autoload($class){
   require_once("../classes/{$class}.php");
 }
 
+
 //IF A $_POST VARIABLE OF 'lastQuery' IS SET... THIS FILE IS BEING CALLED FROM THE 'remove-syntax.php'//
 //SO, JUST PERFORM THE QUERY INSIDE THE VARIABLE $_SESSION['lastQuery'] AND CLOSE THE PROGRAM//
 session_start();
@@ -40,7 +41,7 @@ if(isset($_POST['lastQuery'])){
     }
     //SET THE CURRENT DATABASE//
     // $currDB = "syntaxes";        //LOCAL//
-    $currDB = "syntaxes";    //REMOTE//
+    $currDB = "u176276522_ch";    //REMOTE//
     //SET THE CURRENT MAIN TABLE//
     $currTB = "syntax";
     //CREATE A FILTER -> AN ARRAY CONTAINING AN CONDITION EACH LANGUAGE THAT WILL BE USED IN THE SELECT QUERY --> getLangs()//
@@ -66,7 +67,6 @@ if(isset($_POST['lastQuery'])){
 $conn = DB::connect();
 
 // echo $selectSQL;
-// exit();
 //PERFORM A QUERY//
 $query = $conn->query($selectSQL);
 //STORE THE RESULT OF AFFECTED ROWS//
