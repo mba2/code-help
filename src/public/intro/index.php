@@ -123,7 +123,7 @@
             <!-- <img class="project_item" src="./img/syntax-example-768x294.png"> -->
             <img id="app_example_img_01" class="project_item" src="./img/syntax-example-1441x668.png">
           </figure>
-          <a id="syntax_guide_link" class="project_link" href="http://176.32.230.45/mariomba.com/syntaxes/" target="_blank">Abrir Projeto</a>
+          <a id="syntax_guide_link" class="project_link" href="../home/public" target="_blank">Abrir Projeto</a>
         </footer>
         <!-- END OF .project_footer -->
 
