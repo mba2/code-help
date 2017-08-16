@@ -127,9 +127,8 @@ window.onload = function(){
 
 
   /* ===== BACK TO TOP BUTTON =======*/
-  var toTopBtn = document.querySelector("#to_top_btn");
-      toTopBtn.addEventListener("click",function(e) { myScrollTo(e,this) },false);
-
+  // var toTopBtn = document.querySelector("#to_top_btn");
+  //     toTopBtn.addEventListener("click",function(e) { myScrollTo(e,this) },false);
   /* ===== BACK TO TOP BUTTON =======*/
 
 
@@ -150,8 +149,7 @@ window.onload = function(){
   window.addEventListener("scroll",function(){
           // console.log("scroll");
           // console.log(window.pageYOffset);
-          setToTopBtn(toTopBtn);
-          setHeadersBg(mainHeader);
+//           setHeadersBg(mainHeader);
 
         });
 

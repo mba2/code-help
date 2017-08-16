@@ -111,7 +111,7 @@ body {
   -o-box-shadow: 0px 0px 3px #221f1f;
   box-shadow: 0px 0px 3px #221f1f;
   font-family: "Dosis",sans-serif;
-  background: white;
+  background: #03afb3;
   z-index: 1000;
   /* REMOVE THIS STYLES!!!*/ }
   .main_header #size {
@@ -119,13 +119,11 @@ body {
     margin-left: -280px; }
   .main_header .portfolio_title {
     display: inline-block;
-    width: 70%;
-    height: 100%;
     padding: 1em;
     font-size: 1.1em;
     text-align: left;
     letter-spacing: 0.09em;
-    color: #8c8c8c; }
+  color: #03afb3; }
   .main_header .home_anchor {
     visibility: hidden;
     position: absolute;
@@ -973,8 +971,7 @@ body {
     /* COMPORTAMENTO DO TÍTULO DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
     /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
     /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */ }
-    .main_header .portfolio_title {
-      color: #8c8c8c; }
+    /* .main_header .portfolio_title { */
 
   /* ASIDE BAR
   =========================== */
@@ -1196,7 +1193,8 @@ body {
   /* HOME ANCHOR'S BEHAVIOR WHEN THE NAVIGATION ASIDE BAR IS OPEN*/
   /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
   .main_header .portfolio_title {
-    color: #8c8c8c; }
+    color: #fff !important;
+   }
 
   /* ASIDE BAR
   =========================== */
@@ -1356,7 +1354,6 @@ body {
   /* COMPORTAMENTO DO IÇONE 'HOME' DO CABEÇALHO QUANDO A BARRA DE NAVEGAÇÃO LATERAL ESTIVER ABERTA */
   .main_header {
     height: 4.5em;
-    background: rgba(255, 255, 255, 0.25);
     transition: background 1s ease-in-out; }
     .main_header.solid_bg {
       background: #03afb3; }
@@ -1585,3 +1582,8 @@ body {
   ==============================================================*/ }
 
 /*# sourceMappingURL=my-page.css.map */
+
+
+
+
+.portfolio_title {color:#FFF!important;}
