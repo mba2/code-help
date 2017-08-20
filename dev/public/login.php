@@ -13,32 +13,42 @@
   </head>
   <body>
 
+  <header class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>welcome to <strong>code help</strong></h1>
+      <h2>your personal coding helper</h2>
+    </div>
+  </header>
+
 	<main class="container">
 		<div class="row">
-			<div class="col">
+			<!-- <div class="col">
 				<h1><?php 
           session_start();
           ?>
         </h1>
-			</div>
-			<div class="col">
+			</div> -->
+			<!-- <div class="col">
 				<h1><?php echo $_SESSION['user'];?></h1>
-			</div>
-			<div class="col">
+			</div> -->
+			<div class="col-md col">
+				<h1>welcome to <strong>code help</strong></h1>
+			</div>  
+			<div class="col-md-6 col-6">
 				<h1>welcome to <strong>code help</strong></h1>
 			</div>
-			<div class="col">
+        <div class="col-md col">
 				<h1>welcome to <strong>code help</strong></h1>
 			</div>
-			<div class="col">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>
-			<div class="col">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>
-			<div class="col">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>
+
+      <div class="row justify-content-start">        
+        <div class="col-2">
+          <h1>welcome to <strong>code help</strong></h1>
+        </div>
+        <div class="col-2">
+          <h1>welcome to <strong>code help</strong></h1>
+        </div>
+      </div>
 
 
 		</div>

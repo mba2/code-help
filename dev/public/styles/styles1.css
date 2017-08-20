@@ -1,13 +1,1 @@
-/* line 3, ../../../src/public/styles/styles1.scss */
-span {
-  content: "stylees1"; }
-
-/* line 5, ../../../src/public/styles/styles1.scss */
-div {
-  -webkit-box-pack: "center";
-  -webkit-justify-content: "center";
-      -ms-flex-pack: "center";
-          justify-content: "center";
-  color: green; }
-
-/*# sourceMappingURL=styles1.css.map */
+span{content:"stylees1"}div{-webkit-box-pack:"center";-webkit-justify-content:"center";-ms-flex-pack:"center";justify-content:"center";color:green}
