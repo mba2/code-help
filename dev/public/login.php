@@ -1,15 +1,11 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>LOGIN - GUIA DE SINTAXES</title>
+    <title>LOGIN - CODE HELPER</title>
 
     <?php require_once("../resources/templates/head.php"); ?>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/guia-de-sintaxes.css">
   </head>
   <body>
 
@@ -21,6 +17,7 @@
   </header>
 
 	<main class="container">
+<<<<<<< HEAD
 		<div class="row">
 			<!-- <div class="col">
 				<h1><?php 
@@ -40,6 +37,8 @@
         <div class="col-md col">
 				<h1>welcome to <strong>code help</strong></h1>
 			</div>
+=======
+>>>>>>> Starts a Login Area (with sign in and sign up)
 
       <div class="row justify-content-start">        
         <div class="col-2">
@@ -51,37 +50,38 @@
       </div>
 
 
-		</div>
+		<section class="row welcome">
 
+			<div class="col-12 col-lg-6 text-center text-md-left">
+				<h1>welcome to <strong>code helper</strong></h1>
+			</div>
 
+			<div class="col-12 col-lg-6 text-center text-md-left">
+				<h2>Please, log in to access all your <strong>code samples</strong></h2>
+			</div>
 
+		</section>
+			
+		<section class="row sign-area">
+			<button class="btn btn-sign_in">sign in</button>
+			<button class="btn btn-sign_up">sign up</button>
+		</section>
+
+		<section class="row sign_in-area">
+			<h1 class="sign-heading">sign in area</h1>
+			<button class="btn btn-sign_in">sign in</button>
+			<button class="btn btn-sign_up">sign up</button>
+		</section>
+
+		<section class="row sign_up-area">
+			<h1 class="sign-heading"></h1>
+			<button class="btn btn-sign_in">sign in</button>
+			<button class="btn btn-sign_up">sign up</button>
+		</section>
+
+		<!-- FOOTER GOES HERE --> 
     </main>
 
-    <main class="container-fluid login-main-container old-code">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="login-title">bem vindo ao guia de sintaxes <span>faça seu login</span></h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-md-12 form-area">
-          <form class="" id="" action="login.php" method="post">
-              <div class="form-group">
-                <input type="text" id="" class="form-control" name="username">
-              </div>
-
-              <div class="form-group">
-                <input type="password" id="" class="form-control" name="password">
-              </div>
-
-              <div class="form-group">
-                <input type="submit" id="" class="btn btn-block btn-primary submit-btn" name="submit" value="login">
-              </div>
-          </form>
-          <button id="new_user_btn" class="btn btn-success">novo usuário</a>
-        </div>
-      </div>
-    </main>
     <?php require_once("../resources/templates/scripts.php")?>
   </body>
 </html>

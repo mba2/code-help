@@ -3,3 +3,4 @@ dev/
 deploy/
 node_modules/
 .sass-cache
+.vccode/

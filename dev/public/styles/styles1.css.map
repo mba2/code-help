@@ -1,7 +1,12 @@
 {
 "version": 3,
+<<<<<<< HEAD
 "mappings": "AAAA;;;;;;;;;;;;EAYE;AAwCF;;;;;;;;;;;;;;;;;;;;;;;;;EAyBE;AA2BF;;;;;EAKE;;AC3GF,IAAK;EAAE,OAAO,EAAE,UAAU;;;AAE1B,GAAI;EACA,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,KAAK",
 "sources": ["../../../src/public/styles/base/_sprites.scss","../../../src/public/styles/styles1.scss"],
+=======
+"mappings": ";AAEA,IAAK;EAAE,OAAO,EAAE,UAAU;;;AAE1B,GAAI;EACA,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,KAAK",
+"sources": ["../../../src/public/styles/styles1.scss"],
+>>>>>>> Starts a Login Area (with sign in and sign up)
 "names": [],
 "file": "styles1.css"
 }
