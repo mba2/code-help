@@ -9,79 +9,67 @@
   </head>
   <body>
 
-  <header class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1>welcome to <strong>code help</strong></h1>
-      <h2>your personal coding helper</h2>
-    </div>
-  </header>
+	<link rel="stylesheet" type="text/css" href="./styles/code-help.css">
 
 	<main class="container">
-<<<<<<< HEAD
-		<div class="row">
-			<!-- <div class="col">
-				<h1><?php 
-          session_start();
-          ?>
-        </h1>
-			</div> -->
-			<!-- <div class="col">
-				<h1><?php echo $_SESSION['user'];?></h1>
-			</div> -->
-			<div class="col-md col">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>  
-			<div class="col-md-6 col-6">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>
-        <div class="col-md col">
-				<h1>welcome to <strong>code help</strong></h1>
-			</div>
-=======
->>>>>>> Starts a Login Area (with sign in and sign up)
 
-      <div class="row justify-content-start">        
-        <div class="col-2">
-          <h1>welcome to <strong>code help</strong></h1>
-        </div>
-        <div class="col-2">
-          <h1>welcome to <strong>code help</strong></h1>
-        </div>
-      </div>
-
-
-		<section class="row welcome">
-
-			<div class="col-12 col-lg-6 text-center text-md-left">
-				<h1>welcome to <strong>code helper</strong></h1>
-			</div>
-
-			<div class="col-12 col-lg-6 text-center text-md-left">
-				<h2>Please, log in to access all your <strong>code samples</strong></h2>
-			</div>
-
+		<header class="l-header">
+			<div class="logo"><a href="/">logo</a></div>	
+		</header>
+	
+		<section data-id="sign-home" class="row sign-area sign-home">
+			<h1 class="sign-heading">welcome to <strong>code helper</strong></h1>
+			<p>Please, log in to access all your <strong>code samples</strong></p>
+			<button data-target="sign-in" id="btn--sign-in" class="btn btn-block btn--sign-in js-btn--sign">sign in</button>
+			<button data-target="sign-up" id="btn--sign-up" class="btn btn-block btn--sign-up js-btn--sign">sign up</button>
 		</section>
+		
+		<section data-id="sign-in" class="row sign-area sign-in">
+			<h1 class="sign-heading">sign in</h1>
+			<p>Don't have an account? <a data-target="sign-up" class="js-btn--sign" href="#"><strong>Create here</strong></a></p>
+			<form action="" class="form">
+				<div class="form--block">
+					<label for="sign-in--username-email" class="label label--form">email or username</label>
+					<input id="sign-in--username-email" type="email">
+				</div>
+				<div class="form--block">
+					<label for="sign-in--pass" class="label label--form">password</label>
+					<input id="sign-in--pass" type="password">
+				</div>
+				
+				<input type="submit" name="" value="sign in">
+			</form>
+
+			<p><a data-target="sign-recover-pass" class="js-btn--sign" href="#"><strong>Forgot your password</strong></a></p>
+		</section>
+		<!-- 
+			<section class="row sign-area sign-up">
+				<h1 class="sign-heading"></h1>
+				<button class="btn btn-sign_in">sign in</button>
+				<button class="btn btn-sign_up">sign up</button>
+			</section> -->
 			
-		<section class="row sign-area">
-			<button class="btn btn-sign_in">sign in</button>
-			<button class="btn btn-sign_up">sign up</button>
-		</section>
-
-		<section class="row sign_in-area">
-			<h1 class="sign-heading">sign in area</h1>
-			<button class="btn btn-sign_in">sign in</button>
-			<button class="btn btn-sign_up">sign up</button>
-		</section>
-
-		<section class="row sign_up-area">
-			<h1 class="sign-heading"></h1>
-			<button class="btn btn-sign_in">sign in</button>
-			<button class="btn btn-sign_up">sign up</button>
+		<section data-id="sign-recover-pass" class="row sign-area sign-recover-pass">
+			<h1 class="sign-heading">password</h1>
+			<p>Enter your email address and we'll send you a link to reset your password</p>
+			
+			<form action="" class="form">
+				<div class="form--block">
+					<label for="recover--email" class="label label--form">email address</label>
+					<input id="recover--email" type="email">
+				</div>
+					
+				<input id="" name="" type="submit" class="" value="submit"/>
+			</form>
+				
+			<section class="sign-recover-pass--options">
+				<p><a data-target="sign-in" class="js-btn--sign" href="#"><strong>sign in<strong/></a> or <strong><a data-target="sign-up" class="js-btn--sign" href="">create an account</strong></a></p>
+			</section>
 		</section>
 
 		<!-- FOOTER GOES HERE --> 
     </main>
-
     <?php require_once("../resources/templates/scripts.php")?>
+	<script src="../public/js/login.js"></script>
   </body>
 </html>
