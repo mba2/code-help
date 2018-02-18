@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,4DAA8D;EAE5D;qCACmC;EACnC,aAAa;IAqCV,yCAAyC;IAnC1C,6BAAe;MAkCZ,yCAAyC;MA/B1C,4CAAc;QAGZ,SAAS,EAAE,GAAG;MAIhB,+CAAkB;QAIhB,SAAS,EAAE,KAAK;;EAsBrB,0BAA0B;AAC5B,wBAAwB",
-"sources": ["lg-600-and-855-up.scss"],
-"names": [],
-"file": "lg-600-and-855-up.css"
-}

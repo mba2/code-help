@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,qCAAwC;EACtC;qCACmC;EACnC,aAAa;IAeV,yCAAyC;IAXxC,4CAAc;MACZ,aAAa,EAAE,GAAG;MAClB,SAAS,EAAE,GAAG;IAGhB,+CAAkB;MAChB,UAAU,EAAE,KAAK;MACjB,aAAa,EAAE,MAAM;MAErB,SAAS,EAAE,KAAK;;EAGrB,0BAA0B;AAC5B,wBAAwB",
-"sources": ["sl-240-up.scss"],
-"names": [],
-"file": "sl-240-up.css"
-}

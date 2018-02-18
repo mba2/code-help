@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,4DAA8D;EAC9D;qCACmC;EACnC,aAAa;IAkBV,yCAAyC;IAhB1C,6BAAe;MACb,OAAO,EAAE,kBAAkB;MAE3B,4CAAc;QACZ,aAAa,EAAE,GAAG;QAElB,SAAS,EAAE,KAAK;QAChB,WAAW,EAAE,GAAG;MAGlB,+CAAkB;QAChB,UAAU,EAAE,KAAK;QAGjB,SAAS,EAAE,KAAK;;EAGrB,0BAA0B;AAC1B,wBAAwB",
-"sources": ["md-640-and-320-up.scss"],
-"names": [],
-"file": "md-640-and-320-up.css"
-}
