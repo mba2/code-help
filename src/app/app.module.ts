@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/header/menu/menu.component';
+import { CentralService } from './services/central.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,12 @@ import { MenuComponent } from './components/header/menu/menu.component';
     MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+      
   ],
-  providers: [],
+  providers: [
+    CentralService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
