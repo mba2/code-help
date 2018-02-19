@@ -23,8 +23,9 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should has a menu component', () => {
+  it('should has <menu> and <languages> components', () => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector("menu")).toBeTruthy();
+    expect(compiled.querySelector("languages")).toBeTruthy();
   })
 });
