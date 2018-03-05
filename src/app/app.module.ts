@@ -26,6 +26,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 // ROUTER
 import { RouterModule } from '@angular/router';
 import { UserAreaComponent } from './components/user-area/user-area.component';
+import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-donut.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { UserAreaComponent } from './components/user-area/user-area.component';
     LanguageComponent,
     BackToHomeComponent,
     LoginComponent,
-    UserAreaComponent
+    UserAreaComponent,
+    LoaderDonutComponent
   ],
   imports: [
     BrowserModule,

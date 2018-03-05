@@ -1,0 +1,14 @@
+.donut {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 4px solid rgba(173, 173, 173, 0.4);
+  border-left-color: #607D8B;
+  animation: donut 1s infinite cubic-bezier(0.49, 0.3, 0.62, 0.85);
+}
+
+@keyframes donut {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
