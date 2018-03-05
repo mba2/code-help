@@ -17,13 +17,15 @@ import { AuthGuardService } from './services/auth-guard.service';
 // MISC VARIABLES
 import { environment } from '../environments/environment';
 // REDUX
-import { IAppState, rootReducer} from './store';
+import { IAppState, rootReducer, INITIAL_STATE} from './store';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 // FIREBASE
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 // ROUTER
 import { RouterModule } from '@angular/router';
+import { UserAreaComponent } from './components/user-area/user-area.component';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     LanguageComponent,
     BackToHomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserAreaComponent
   ],
   imports: [
     BrowserModule,
@@ -52,32 +55,29 @@ import { RouterModule } from '@angular/router';
   providers: [
     CentralService,
     AuthService,
-    AuthGuardService
+    AuthGuardService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { 
-  private preloadState: IAppState;
+export class AppModule {
+  preload = { 
+    counter: 1,
+    languages: null
+  };
 
-  constructor(
-    private service: CentralService,
-    private ngRedux: NgRedux<IAppState>) {
-    
-    this.preloadState = {
-      languages: ["php","js"],
-      userIsLogged : false,
-      hasError : false
-    };
+  constructor(private ngRedux: NgRedux<IAppState>, private service: CentralService) {
 
-    // this.service.getLanguages()
-    //   .subscribe( e => {
-    //     console.log("getLanguages()", e);
+    // let subs = this.service.getLanguages()
+    //   .subscribe( (e) => {
+    //     console.log(typeof e);
+    //     this.preload.languages = e;
+    //     this.ngRedux.configureStore(rootReducer, this.preload);
+
+    //     this.ngRedux.subscribe(() => console.log(this.ngRedux.getState()));
+    //     subs.unsubscribe();
     //   });
-
-      ngRedux.configureStore(rootReducer, this.preloadState);
-    //   CentralService.initializeStore()
-    //   .subscribe( () => {
-    //   });
+      
   }
 }

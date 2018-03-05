@@ -1,7 +1,9 @@
 
-<div class="language">
-    {{ lang }} 
-    <span  class="language__edit-btn" (click)="editLang(lang)">edit</span> 
+<input type="text" placeholder="type your language here" #newLangInput (keyup.enter)="addLang(newLangInput.value)">
+
+<div class="language" *ngFor="let lang of languages | async">
+    {{ lang.name }} 
+    <input #test type="text">
+    <span  class="language__edit-btn" (click)="editLang(lang.key,test.value)">edit</span> 
     <span class="language__remove-btn" (click)="removeLang(language)">remove</span>
-    <!-- <input *ngIf="editMode" type="text"> -->
 </div>

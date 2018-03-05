@@ -1,0 +1,15 @@
+<div class="user-area">
+  <div *ngIf="auth.user$ | async as user;else anonymousArea">
+    <div class="user-info">
+      <p>
+        Hello, <span>{{ user.displayName }}</span>
+      </p>
+    </div>
+    <button class="btn btn-logout" (click)="logout()">logout</button>
+  </div>
+  <ng-template #anonymousArea>
+    <div class="login-area">
+      <button class="btn btn-login btn-login--google" (click)="login_with_google()">login with chrome</button>
+    </div>
+  </ng-template>
+</div>

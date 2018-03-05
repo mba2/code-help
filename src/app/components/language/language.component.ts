@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CentralService } from '../../services/central.service';
 import { ElementRef } from '@angular/core/src/linker/element_ref';
-import { Input } from '@angular/core';
 import { NgRedux, select } from 'ng2-redux';
+import { IAppState } from '../../store';
+import { ADD_LANG } from '../../actions/actions';
 
 @Component({
   selector: 'app-language',
@@ -11,20 +12,23 @@ import { NgRedux, select } from 'ng2-redux';
 })
 export class LanguageComponent implements OnInit {
 
-  @select('languages') lang;
-  // private editMode: boolean = false;
+  @select('counter') counter;
+  @select('languages') languages;
 
-  constructor(private service: CentralService) { 
+  constructor(private service: CentralService, private ngRedux: NgRedux<IAppState> ) { 
     // this.languages$ = this.service.getLanguages();
   }
 
   ngOnInit() {
-    console.log(this.lang);
   }
 
+  editLang(key,test) {
+    this.service.editLang(key,test);
+  }
 
-
-  removeLang() {
-    
+  addLang(val) {
+    console.log(val);
+    // this.service.addLang(val);
+    this.ngRedux.dispatch( { type: ADD_LANG , payload: val})
   }
 }
