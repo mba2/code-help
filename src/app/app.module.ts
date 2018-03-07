@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { BackToHomeComponent } from './components/back-to-home/back-to-home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/header/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
@@ -33,12 +32,10 @@ import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-d
   declarations: [
     AppComponent,
     ConfigComponent,
-    BackToHomeComponent,
     HeaderComponent,
     MenuComponent,
     HomeComponent,
     LanguageComponent,
-    BackToHomeComponent,
     LoginComponent,
     UserAreaComponent,
     LoaderDonutComponent
@@ -64,12 +61,15 @@ import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-d
 })
 
 export class AppModule {
-  preload = { 
-    counter: 1,
-    languages: null
-  };
+  // preload = { 
+  //   counter: 1,
+  //   languages: null
+  // };
 
-  constructor(private ngRedux: NgRedux<IAppState>, private service: CentralService) {
+  constructor(
+    // private ngRedux: NgRedux<IAppState>, 
+    // private service: CentralService
+  ) {
 
     // let subs = this.service.getLanguages()
     //   .subscribe( (e) => {
