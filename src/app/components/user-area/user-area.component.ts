@@ -4,6 +4,8 @@ import { AuthService } from '../../services/auth.service';
 /** * RXJS */
 import { Observable } from 'rxjs/Observable';
 
+/** MODULE */
+import { Router } from '@angular/router';
 /** COMPONENTS */
 import { LoaderDonutComponent } from '../loaders/loader-donut/loader-donut.component';
 
@@ -14,17 +16,9 @@ import { LoaderDonutComponent } from '../loaders/loader-donut/loader-donut.compo
 })
 export class UserAreaComponent implements OnInit {
   
-  constructor(public auth: AuthService) {
-    // this.user$ = this.auth.authState;
-  }
+  constructor(
+    public auth: AuthService) {}
 
   ngOnInit() {
-  }
-
-  login_with_google(): void {
-    this.auth.login_with_google();
-  }
-  logout(): void {
-    this.auth.logout();
   }
 }

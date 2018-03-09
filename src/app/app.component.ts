@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 /** SERVICES */
 import { AuthService } from './services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { UserService } from './services/user.service';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +18,14 @@ export class AppComponent {
   constructor(
     private auth: AuthService,
     private afAuth: AngularFireAuth,
-    private route: Router) {
+    private route: Router,
+    private userService: UserService) {
+      
     this.afAuth.auth.getRedirectResult().then(result => {
       if(result.user) {
-        let route = localStorage.getItem('returnUrl');
-        this.route.navigate([route]);
+        this.userService.updateUserInfo(result.user);
+
+        this.route.navigateByUrl('/');
       }
     })
   }

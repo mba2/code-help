@@ -1,5 +1,4 @@
-<header class="header">
+<header class="header" *ngIf="auth.user$ | async as user">
   <menu></menu>  
   <app-user-area></app-user-area>
-  <!-- <app-languages-list></app-languages-list> -->
 </header>

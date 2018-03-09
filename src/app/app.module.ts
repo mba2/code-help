@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CentralService } from './services/central.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { UserService } from './services/user.service';
 // MISC VARIABLES
 import { environment } from '../environments/environment';
 // REDUX
@@ -20,7 +21,7 @@ import { IAppState, rootReducer, INITIAL_STATE} from './store';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 // FIREBASE
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, FirebaseApp } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 // ROUTER
 import { RouterModule } from '@angular/router';
@@ -55,7 +56,8 @@ import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-d
     CentralService,
     AuthService,
     AuthGuardService,
-    AngularFireAuth
+    AngularFireAuth,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
