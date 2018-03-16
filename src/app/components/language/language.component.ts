@@ -12,23 +12,26 @@ import { ADD_LANG } from '../../actions/actions';
 })
 export class LanguageComponent implements OnInit {
 
-  @select('counter') counter;
-  @select('languages') languages;
+  // @select('counter') counter;
+  // @select('languages') languages;
+
+  // public languages$;
+  public syntaxes$;
 
   constructor(private service: CentralService, private ngRedux: NgRedux<IAppState> ) { 
     // this.languages$ = this.service.getLanguages();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  editLang(key,test) {
-    this.service.editLang(key,test);
-  }
+  // editLang(key,test) {
+  //   this.service.editLang(key,test);
+  // }
 
-  addLang(val) {
-    console.log(val);
-    // this.service.addLang(val);
-    this.ngRedux.dispatch( { type: ADD_LANG , payload: val})
-  }
+  // addLang(val) {
+  //   console.log(val);
+  //   // this.service.addLang(val);
+  //   this.ngRedux.dispatch( { type: ADD_LANG , payload: val})
+  // }
+
 }

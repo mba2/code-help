@@ -21,13 +21,17 @@ import { IAppState, rootReducer, INITIAL_STATE} from './store';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
 // FIREBASE
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireModule, FirebaseApp } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 // ROUTER
 import { RouterModule } from '@angular/router';
 import { UserAreaComponent } from './components/user-area/user-area.component';
 import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-donut.component';
+import { SyntaxListComponent } from './components/syntax-list/syntax-list.component';
+import { FormsModule } from '@angular/forms';
 
+
+import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 @NgModule({
   declarations: [
@@ -39,9 +43,12 @@ import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-d
     LanguageComponent,
     LoginComponent,
     UserAreaComponent,
-    LoaderDonutComponent
+    LoaderDonutComponent,
+    SyntaxListComponent
   ],
   imports: [
+    MyDateRangePickerModule,
+    FormsModule,
     BrowserModule,
     NgReduxModule,
     AngularFireModule.initializeApp(environment.firebase),
