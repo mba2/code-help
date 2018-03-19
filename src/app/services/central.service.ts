@@ -2,9 +2,12 @@ import { IAppState } from '../store';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
+
 import 'rxjs/add/operator/map';
 import "rxjs/add/operator/catch";
-import { Http } from '@angular/http';
+import "rxjs/add/operator/toPromise";
+
 @Injectable()
 
 export class CentralService {
@@ -19,6 +22,14 @@ export class CentralService {
     private db: AngularFireDatabase,
     private http: Http ) { }
   
+  loadOne(url) {
+    return this.http.get(url).toPromise();
+  }
+
+  loadTwo(url) {
+    return this.http.get(url).toPromise();
+  }
+
   public get(resource?, url?) {
     // APPROACH: DEALING WITH A RESPONSE OBJECT
     return this.http.get(url);

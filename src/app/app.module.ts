@@ -1,6 +1,7 @@
 // MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -31,7 +32,6 @@ import { SyntaxListComponent } from './components/syntax-list/syntax-list.compon
 import { FormsModule } from '@angular/forms';
 
 
-import { MyDateRangePickerModule } from 'mydaterangepicker';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { MyDateRangePickerModule } from 'mydaterangepicker';
     SyntaxListComponent
   ],
   imports: [
-    MyDateRangePickerModule,
+    HttpModule,
     FormsModule,
     BrowserModule,
     NgReduxModule,

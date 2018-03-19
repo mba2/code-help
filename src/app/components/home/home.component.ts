@@ -1,39 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit, AfterContentInit,  ViewChildren } from '@angular/core';
+import { QueryList, ContentChildren } from '@angular/core';
 
 import {IMyDrpOptions, IMyDateRangeModel} from 'mydaterangepicker';
-
+import { CentralService } from '../../services/central.service';
+import { LanguageComponent } from '../language/language.component';
+import { AfterContentChecked } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit, AfterContentInit , AfterContentChecked {
   
   private url = "https://sample-api-78c77.firebaseio.com/episodes/SHOW123.json";
+  private url_2 = "https://api.github.com/users/mosh-hamedani/followers";
+  private url_3 = "https://api.github.com/users/mba2/followers";
   
-  myDateRangePickerOptions: IMyDrpOptions = {
-    // other options...
-    dateFormat: 'dd.mm.yyyy',
-};
+  private infoIsFullyLoaded = false;
 
-  // For example initialize to specific date (09.10.2018 - 19.10.2018). It is also possible
-  // to set initial date range value using the selDateRange attribute.
-  private model: any = {beginDate: {year: 2018, month: 10, day: 9},
-                         endDate: {year: 2018, month: 10, day: 19}};
-  constructor() { }
+  private myArray = [];
 
+  @ViewChildren(LanguageComponent) items : QueryList<LanguageComponent>;
+
+  constructor(private service: CentralService) {
+    // console.log(this.items);
+   }
+
+  private loadInfo() {
+    this.service.loadOne(this.url)
+      .then( a => this.myArray = a.json() )
+      .then( b => {
+        return this.service.loadOne(this.url_2)
+      })
+      .then(c => {
+        console.log(c)
+        return this.service.loadOne(this.url_3)
+      })
+      .then( d => {
+        // console.log(d);
+        this.infoIsFullyLoaded = true;
+        console.log(this.items);
+      })
+  }
+
+  // test() {
+  //   console.log(this.items.first);
+  // }
   ngOnInit() {
-  }
-
-      // dateRangeChanged callback function called when the user apply the date range. This is
-    // mandatory callback in this option. There are also optional inputFieldChanged and
-    // calendarViewChanged callbacks.
-    onDateRangeChanged(event: IMyDateRangeModel) {
-      console.log('test');
-      // event properties are: event.beginDate, event.endDate, event.formatted,
-      // event.beginEpoc and event.endEpoc
-  }
-
+    this.loadInfo();
+  } 
   
+  // ngAfterViewInit() {
+  //   console.log("ngAfterViewInit", this.items);
+  // }
+  // ngAfterContentInit() {
+  //   console.log("ngAfterContentInit", this.items);
+  // }
+  // ngAfterContentInit() {
+  //   console.log("ngAfterContentInit", this.items);
+  // }
+  // ngAfterContentChecked() {
+  //   console.log("ngAfterContentChecked", this.items);
+  // }
+
+
 }

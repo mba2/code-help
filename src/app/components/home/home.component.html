@@ -1,12 +1,12 @@
-<p>
+<p (click)="test()">
   home works!
 </p>
 
-<form #myForm="ngForm" novalidate>
-  <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions"
-      [(ngModel)]="model" required
-      (dateRangeChanged)="onDateRangeChanged($event)"></my-date-range-picker>
-</form>
-
 <!-- <app-syntax-list></app-syntax-list> -->
+
+<p *ngIf="infoIsFullyLoaded">
+  ae
+
+</p>
+<app-language [info]="i" *ngFor="let i of myArray; let test = index"></app-language>
 

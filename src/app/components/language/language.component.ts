@@ -11,15 +11,18 @@ import { ADD_LANG } from '../../actions/actions';
   styleUrls: ['./language.component.css']
 })
 export class LanguageComponent implements OnInit {
-
+  @Input('info') info;
   // @select('counter') counter;
   // @select('languages') languages;
 
   // public languages$;
-  public syntaxes$;
+  // public syntaxes$;
 
   constructor(private service: CentralService, private ngRedux: NgRedux<IAppState> ) { 
     // this.languages$ = this.service.getLanguages();
+  }
+  test() {
+    console.log(this);
   }
 
   ngOnInit() {}
