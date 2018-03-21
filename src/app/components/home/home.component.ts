@@ -3,66 +3,92 @@ import { QueryList, ContentChildren } from '@angular/core';
 
 import {IMyDrpOptions, IMyDateRangeModel} from 'mydaterangepicker';
 import { CentralService } from '../../services/central.service';
-import { LanguageComponent } from '../language/language.component';
 import { AfterContentChecked } from '@angular/core/src/metadata/lifecycle_hooks';
+import { PlaceholderComponent } from '../placeholder/placeholder.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit, AfterContentInit , AfterContentChecked {
-  
-  private url = "https://sample-api-78c77.firebaseio.com/episodes/SHOW123.json";
-  private url_2 = "https://api.github.com/users/mosh-hamedani/followers";
-  private url_3 = "https://api.github.com/users/mba2/followers";
-  
-  private infoIsFullyLoaded = false;
+export class HomeComponent implements OnInit, AfterViewInit {
+  @ViewChildren(PlaceholderComponent) days : QueryList<PlaceholderComponent>;
 
-  private myArray = [];
-
-  @ViewChildren(LanguageComponent) items : QueryList<LanguageComponent>;
+  private in_d: PlaceholderComponent;
+  private out_d: PlaceholderComponent;
 
   constructor(private service: CentralService) {
     // console.log(this.items);
-   }
-
-  private loadInfo() {
-    this.service.loadOne(this.url)
-      .then( a => this.myArray = a.json() )
-      .then( b => {
-        return this.service.loadOne(this.url_2)
-      })
-      .then(c => {
-        console.log(c)
-        return this.service.loadOne(this.url_3)
-      })
-      .then( d => {
-        // console.log(d);
-        this.infoIsFullyLoaded = true;
-        console.log(this.items);
-      })
   }
 
-  // test() {
-  //   console.log(this.items.first);
-  // }
+  getSelectedDays(): number {
+    return this.days.filter( day => day.isSelected).length;
+  }
+
+  unselectDay(day: PlaceholderComponent = null) {
+    /** IN CASE NOTHING IS PASSED AS ARGUMENT.. */
+    if(!day) {
+      this.days.map( day => { day.isSelected = false; }); 
+      return;
+    }
+    /** OTHERWISE... */
+    day.isSelected = !day.isSelected;
+  } 
+
+  userFirstSelection(d: PlaceholderComponent) {
+    this.in_d = d;
+    d.isSelected = !d.isSelected;
+  }
+
+
+  test(d: PlaceholderComponent) {
+    console.log(d);
+    /** 
+     * IF THIS CONDITION IS TRUE... THEN IT`S THE USER`S FIRST CLICK ...
+     * SET THE CLICKED DAY AS CHECKIN AND TERMINATE THE FUNCTION
+    * */
+    if(!this.getSelectedDays()) {
+      this.userFirstSelection(d);
+      return;
+    }
+
+    if(d === this.in_d) {
+      this.unselectDay(d);
+      this.in_d = null;
+      return;
+    }
+
+    if(d === this.out_d) {
+      this.unselectDay(d);
+      this.out_d = null;
+      return;
+    }
+
+    /** AT THIS POINT, ONE DAY IS ALREADY SELECTED...*/
+    if(d.rawDate.getTime() <= this.in_d.rawDate.getTime()) {
+      d.isSelected =  true;
+      this.in_d.isSelected = false;
+      this.in_d = d;
+    }else {
+      d.isSelected =  true;
+      this.out_d = d;
+      // this.out_d.isSelected = true;
+    }
+
+    console.log('continuing: ', this.getSelectedDays());
+
+  }
+  
   ngOnInit() {
-    this.loadInfo();
   } 
   
-  // ngAfterViewInit() {
-  //   console.log("ngAfterViewInit", this.items);
-  // }
+  ngAfterViewInit() {
+    // console.log("ngAfterViewInit", this.days);
+  }
   // ngAfterContentInit() {
-  //   console.log("ngAfterContentInit", this.items);
-  // }
-  // ngAfterContentInit() {
-  //   console.log("ngAfterContentInit", this.items);
+  //   console.log("ngAfterContentInit", this.days);
   // }
   // ngAfterContentChecked() {
-  //   console.log("ngAfterContentChecked", this.items);
+  //   console.log("ngAfterContentChecked", this.days);
   // }
-
-
 }

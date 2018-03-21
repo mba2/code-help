@@ -30,6 +30,7 @@ import { UserAreaComponent } from './components/user-area/user-area.component';
 import { LoaderDonutComponent } from './components/loaders/loader-donut/loader-donut.component';
 import { SyntaxListComponent } from './components/syntax-list/syntax-list.component';
 import { FormsModule } from '@angular/forms';
+import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 
 
 
@@ -44,7 +45,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     UserAreaComponent,
     LoaderDonutComponent,
-    SyntaxListComponent
+    SyntaxListComponent,
+    PlaceholderComponent
   ],
   imports: [
     HttpModule,
@@ -54,8 +56,8 @@ import { FormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, canActivate: [AuthGuardService]},
-      { path: 'config', component: ConfigComponent, canActivate: [AuthGuardService]},
+      { path: '', component: HomeComponent},
+      { path: 'config', component: ConfigComponent},
       { path: 'login', component: LoginComponent},
     ])
   ],
