@@ -18,8 +18,8 @@ import { UserService } from './services/user.service';
 // MISC VARIABLES
 import { environment } from '../environments/environment';
 // REDUX
-import { IAppState, rootReducer, INITIAL_STATE} from './store';
 import { NgRedux, NgReduxModule } from 'ng2-redux';
+import { IAppState, reducers } from './store';
 // FIREBASE
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
@@ -72,15 +72,12 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
 })
 
 export class AppModule {
-  // preload = { 
-  //   counter: 1,
-  //   languages: null
-  // };
 
   constructor(
-    // private ngRedux: NgRedux<IAppState>, 
+    private store: NgRedux<IAppState>, 
     // private service: CentralService
   ) {
+    this.store.configureStore(reducers, null);
 
     // let subs = this.service.getLanguages()
     //   .subscribe( (e) => {
