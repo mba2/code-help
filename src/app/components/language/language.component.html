@@ -1,8 +1,19 @@
 
 <div *ngFor="let lang of avaliableLangs$ | async">
     <span>{{lang.id}}</span>
-    <span>{{lang.name}}</span>
+    <span *ngIf="!inEditMode">{{lang.name}}</span>
+    <input *ngIf="inEditMode" type="text" value="{{lang.name}}"/>
+    <span *ngIf="!inEditMode" (click)="setEditMode()">e</span>
+    <span (click)="removeLang(lang)">x</span>
 </div>
+
+<button (click)="cancelEdition()">
+    cancel edition
+</button>
+
+<button (click)="saveEdition()">
+    save
+</button>
 <!-- <input type="text" placeholder="type your language here" #newLangInput (keyup.enter)="addLang(newLangInput.value)"> -->
 <!-- <div class="language" *ngFor="let lang of languages$ | async">
     {{ lang.name }}  -->

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CentralService } from '../../services/central.service';
 import { LanguageComponent } from '../language/language.component';
 
 @Component({
@@ -9,7 +8,7 @@ import { LanguageComponent } from '../language/language.component';
 })
 export class ConfigComponent implements OnInit {
 
-  constructor(private service: CentralService) { 
+  constructor() { 
 
   }
 

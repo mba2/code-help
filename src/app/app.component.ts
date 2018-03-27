@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
-/** SERVICES */
-import { AuthService } from './services/auth.service';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { UserService } from './services/user.service';
-import { HeaderComponent } from './components/header/header.component';
-import { CentralService } from './services/central.service';
-
+import { Component } from '@angular/core';
 
 /** REDUX */
-import { IAppState, LOAD_APP_INFO } from './store';
-import { NgRedux } from 'ng2-redux';
+import { select, NgRedux } from 'ng2-redux';
+/** STORE(S) */
+import { IAppState } from './store';
+import { CHANGE_TITLE, INCREMENT } from './components/placeholder/actions';
+
 import "rxjs/add/operator/toPromise";
 
 @Component({
@@ -18,39 +13,35 @@ import "rxjs/add/operator/toPromise";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'app';
 
-  constructor(
-    // private auth: AuthService,
-    // private afAuth: AngularFireAuth,
-    // private userService: UserService,
-    private service: CentralService,
-    private store: NgRedux<IAppState>) {
-      
-    // this.afAuth.auth.getRedirectResult().then(result => {
-    //   if(result.user) {
-    //     console.log(result.user);
-    //     this.userService.updateUserInfo(result.user);
+export class AppComponent {
 
-    //     this.route.navigateByUrl('/');
-    //   }
-    // })
+  @select( s => s.placeholder.title) placeholderTitle;
+  @select( s => s.placeholder.counter) placeholderCounter;
+
+  constructor(private ngRedux: NgRedux<IAppState>) {
+    
   }
 
-  ngOnInit() {
-    this.loadAppInfo();
+
+  // loadLanguages(title: string) {
+  //   this.ngRedux.dispatch( { type: CHANGE_TITLE, title }).
+  // }
+
+  // loadSyntaxes(title: string) {
+  //   this.ngRedux.dispatch( { type: CHANGE_TITLE, title }).
+  // }
+
+  // loadUserInfo() {
+  //   this.ngRedux.dispatch( { type: INCREMENT });
+  // }
+
+  changeTitle(title: string) {
+    this.ngRedux.dispatch( { type: CHANGE_TITLE, title });
   }
 
-  loadAppInfo() {
-    Promise.all([
-      this.service.loadAppInfo()
-
-    ]).then( (e) => {
-      const languages = e[0]['languages'];
-
-      this.store.dispatch({ type: LOAD_APP_INFO, languages })
-      console.log(e);
-    })
+  increment() {
+    this.ngRedux.dispatch( { type: INCREMENT });
   }
+
 }
