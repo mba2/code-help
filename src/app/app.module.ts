@@ -1,7 +1,7 @@
 // MODULES
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { NgModule, isDevMode } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,7 +18,7 @@ import { UserService } from './services/user.service';
 // MISC VARIABLES
 import { environment } from '../environments/environment';
 // REDUX
-import { NgRedux, NgReduxModule } from 'ng2-redux';
+import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { IAppState, reducers } from './store';
 // FIREBASE
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
@@ -49,15 +49,16 @@ import { PlaceholderComponent } from './components/placeholder/placeholder.compo
     PlaceholderComponent
   ],
   imports: [
-    HttpModule,
     FormsModule,
     BrowserModule,
+    HttpClientModule,
     NgReduxModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'config', component: ConfigComponent},
+      // { path: 'config', component: ConfigComponent, canActivate: [AuthGuardService]},
       { path: 'login', component: LoginComponent},
     ])
   ],
@@ -75,9 +76,11 @@ export class AppModule {
 
   constructor(
     private store: NgRedux<IAppState>, 
+    private devTools: DevToolsExtension
     // private service: CentralService
   ) {
-    this.store.configureStore(reducers, null);
+    const enhancers = (isDevMode()) ? [devTools.enhancer()] : [];
+    this.store.configureStore(reducers, null, null, enhancers);
 
     // let subs = this.service.getLanguages()
     //   .subscribe( (e) => {

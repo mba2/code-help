@@ -1,10 +1,13 @@
 /** STORES */
 import { ILanguageState } from "./components/language/store";
 
+/** REDUX */
+import { tassign } from "tassign";
+
 
 export interface IAppState {
   languages: ILanguageState;
-  test: string;
+  // test: string;
   // messaging?: {
   //   newMessages: number;
   // };
@@ -42,8 +45,32 @@ export interface IAppState {
 //   }
 //   return state;
 // }
+export const LOAD_APP_INFO = 'LOAD_APP_INFO';
 
-export function reducers(state: IAppState): IAppState {
+export class IAppActions {
+  constructor(
+    private state: IAppState,
+    private action: any) {}
 
-  return state;
+    loadAppInfo(): IAppState {
+      return tassign(
+        this.state,
+        {
+          languages: {
+            languages: this.action.languages,
+            lastUpdate: new Date()
+          }
+        }
+      );
+  }
+}
+export function reducers(state: IAppState, action: any): IAppState {
+  const actions = new IAppActions(state,action);
+
+  switch(action.type) {
+    case LOAD_APP_INFO: 
+      return actions.loadAppInfo();
+    default:
+      return state;
+  }
 }

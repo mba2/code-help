@@ -1,11 +1,13 @@
 /** ANGULAR`S CORE */
 import { Component, OnInit, Input } from '@angular/core';
 /** SERVICES */
-import { CentralService } from '../../services/central.service';
+
+/** RXJS */
+import { Observable } from '@firebase/util/dist/esm/src/subscribe';
 /** REDUX */
 import { NgRedux, select } from 'ng2-redux';
-import { IAppState } from '../../store';
 /** STORE(S) */
+import { IAppState } from '../../store';
 
 
 @Component({
@@ -15,8 +17,9 @@ import { IAppState } from '../../store';
 })
 
 export class LanguageComponent implements OnInit {
+  @select(['languages','languages']) avaliableLangs$: Observable<any>;
 
   constructor(private store: NgRedux<IAppState> ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }
