@@ -17,6 +17,7 @@ export class PlaceholderComponent implements OnInit {
   private months_arr = ['January','February','March','Abril','May','June','July','August','September','November','December'];
 
   public isSelected = false;
+  public isInRange = false;
 
   constructor() { }
 

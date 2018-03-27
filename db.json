@@ -1,0 +1,23 @@
+{
+  "user": [
+    { "id": 1, "name": "Walter WHite"},
+    { "id": 2, "name": "Heisenberg" }  
+  ],
+  "syntax": [
+    { "id": 1, 
+      "languageId": 1, 
+      "title": "create a function ", 
+      "body": "function() {}" 
+    },
+    { "id": 2, 
+      "languageId": 1, 
+      "title": "create a function ", 
+      "body": "function() {}"  
+    },
+    { "id": 3, 
+      "languageId": 2, 
+      "title": "create a variable", 
+      "body": "$test = 'value';"  
+    }
+  ]
+}

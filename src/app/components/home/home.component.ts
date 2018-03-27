@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   unselectDay(day: PlaceholderComponent = null) {
     /** IN CASE NOTHING IS PASSED AS ARGUMENT.. */
     if(!day) {
-      this.days.map( day => { day.isSelected = false; }); 
+      this.days.map( day => { day.isSelected = day.isInRange = false; }); 
       return;
     }
     /** OTHERWISE... */
@@ -40,40 +40,79 @@ export class HomeComponent implements OnInit, AfterViewInit {
     d.isSelected = !d.isSelected;
   }
 
+  defineInRangeDays() {
+    // console.log(this.in_d);
+    // console.log(this.out_d);
+    this.days.forEach( day => {
+      if( day.rawDate > this.in_d.rawDate && day.rawDate < this.out_d.rawDate) {
+        console.log('day:', day);
+        day.isInRange = true;
+      }
+    })
+  }
+
+  revertDates() {
+    let temp = this.in_d;
+    this.in_d = this.out_d;
+    this.out_d = temp;
+  }
 
   test(d: PlaceholderComponent) {
-    console.log(d);
-    /** 
-     * IF THIS CONDITION IS TRUE... THEN IT`S THE USER`S FIRST CLICK ...
-     * SET THE CLICKED DAY AS CHECKIN AND TERMINATE THE FUNCTION
-    * */
+    // console.log(d);
+    // /** 
+    //  * IF THIS CONDITION IS TRUE... THEN IT`S THE USER`S FIRST CLICK ...
+    //  * SET THE CLICKED DAY AS CHECKIN AND TERMINATE THE FUNCTION
+    // * */
     if(!this.getSelectedDays()) {
-      this.userFirstSelection(d);
-      return;
-    }
-
-    if(d === this.in_d) {
-      this.unselectDay(d);
-      this.in_d = null;
-      return;
-    }
-
-    if(d === this.out_d) {
-      this.unselectDay(d);
-      this.out_d = null;
-      return;
-    }
-
-    /** AT THIS POINT, ONE DAY IS ALREADY SELECTED...*/
-    if(d.rawDate.getTime() <= this.in_d.rawDate.getTime()) {
-      d.isSelected =  true;
-      this.in_d.isSelected = false;
+      d.isSelected = true;
       this.in_d = d;
-    }else {
-      d.isSelected =  true;
-      this.out_d = d;
-      // this.out_d.isSelected = true;
+      return;
     }
+    
+    if(this.getSelectedDays() === 1 && d !== this.in_d) {
+      d.isSelected = true;
+      this.out_d = d;
+      if(this.in_d.rawDate > this.out_d.rawDate) {
+        this.revertDates();
+      }
+      this.defineInRangeDays();
+      return;
+    }else {
+      
+    }
+
+
+
+    // if(d.rawDate <= this.in_d.rawDate) {
+    //   this.in_d = null;
+    //   return;
+    // }
+
+    // else if(d === this.out_d) {
+    //   this.unselectDay(d);
+    //   this.out_d = null;
+    //   return;
+    // }
+
+    if(this.getSelectedDays() === 2) {
+      this.unselectDay();
+      d.isSelected = true;
+      this.in_d = d;
+      this.out_d = null;
+    }
+
+
+
+    // /** AT THIS POINT, ONE DAY IS ALREADY SELECTED...*/
+    // if(d.rawDate.getTime() <= this.in_d.rawDate.getTime()) {
+    //   d.isSelected =  true;
+    //   this.in_d.isSelected = false;
+    //   this.in_d = d;
+    // }else {
+    //   d.isSelected =  true;
+    //   this.out_d = d;
+    //   // this.out_d.isSelected = true;
+    // }
 
     console.log('continuing: ', this.getSelectedDays());
 
