@@ -9,7 +9,7 @@ import "rxjs/add/operator/toPromise";
 
 @Injectable()
 
-export class LanguageService {
+export class LanguagesService {
   
   constructor(
     // private db: AngularFireDatabase,

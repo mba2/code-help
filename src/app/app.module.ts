@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 /** REDUX */
 import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { combineReducers } from 'redux';
-import { IAppState, rootReducer, INITIAL_STATE } from './store';
+import { IAppState, rootReducer } from './store';
 
 /** ERRORS */
 
@@ -12,19 +14,33 @@ import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { AppComponent } from './app.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { AnotherPlaceholderComponent } from './components/another-placeholder/another-placeholder.component';
+import { LanguagesComponent } from './components/languages/languages.component';
+import { ConfigComponent } from './components/config/config.component';
+/** SERVICES */
+import { LanguagesService } from './components/languages/languages.service';
+/** DIRECTIVES */
+import { LanguageInputDirective } from './directives/language-input.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ConfigComponent,
+    LanguagesComponent,
     PlaceholderComponent,
-    AnotherPlaceholderComponent
+    AnotherPlaceholderComponent,
+    LanguageInputDirective
   ],
   imports: [
     BrowserModule,
-    NgReduxModule
+    HttpClientModule,
+    NgReduxModule,
+    RouterModule.forRoot([
+      { path: 'config', component: ConfigComponent }
+    ])
   ],
   providers: [
+    LanguagesService
   ],
   bootstrap: [AppComponent]
 })
@@ -32,6 +48,6 @@ export class AppModule {
   constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension) {
     let enhancers = isDevMode() ? [devTools.enhancer()] : [];
 
-    ngRedux.configureStore(rootReducer, INITIAL_STATE, [], enhancers);
+    ngRedux.configureStore(rootReducer, undefined, [], enhancers);
   }
  }
