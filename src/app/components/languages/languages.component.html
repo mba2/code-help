@@ -1,8 +1,20 @@
+<button (click)="setNewLangMode()" [hidden]="inNewLanguageMode">
+  new
+</button>
+<div class="new-lang-area" [hidden]="!inNewLanguageMode">
+  <button (click)="saveNewLanguage()">
+    save
+  </button>
+  <button (click)="inNewLanguageMode = false">
+    cancel
+  </button>
+  <input [languageInput]="{}" type="text">
+</div>
 
 <div *ngFor="let lang of avaliableLangs$ | async">
     <span>{{lang.id}}</span>
     <span *ngIf="!inEditMode">{{lang.name}}</span>
-    <input [languageInput]="lang" *ngIf="inEditMode" type="text" value="{{lang.name}}"/>
+    <input [languageInput]="lang" [hidden]="!inEditMode" type="text" value="{{lang.name}}"/>
     <span *ngIf="!inEditMode" (click)="setEditMode()">e</span>
     <span (click)="removeLang(lang)">x</span>
 </div>
@@ -16,8 +28,6 @@
     save
   </button>
 </div>
-
-<span #test>testing...</span>
 
 <!-- <input type="text" placeholder="type your language here" #newLangInput (keyup.enter)="addLang(newLangInput.value)"> -->
 <!-- <div class="language" *ngFor="let lang of languages$ | async">
