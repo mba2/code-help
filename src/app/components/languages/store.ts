@@ -1,14 +1,13 @@
 /** HELPERS */
 import { tassign } from 'tassign';
 /** ACTIONS */
-import { REMOVE_LANGUAGE, LOAD_LANGUAGES, EDIT_LANGUAGES } from './actions';
+import { REMOVE_LANGUAGE, LOAD_LANGUAGES, EDIT_LANGUAGES, ADD_LANGUAGE } from './actions';
 /** SERVICE */
 import { LanguagesService } from './languages.service';
 
 
 export interface ILanguagesState {
-  languages: any[],
-  lastUpdate: Date
+  languages: any[]
 }
 
 export class LanguagesActions {
@@ -21,31 +20,33 @@ export class LanguagesActions {
     return tassign(
       this.state,
       {
-        languages : this.action.languages
+        languages : this.action.payload
       }
     );
   }
 
   removeLanguage() {
-    console.log(this.action); 
     const languageToBeRemoved = this.action.languageToBeRemoved;
     return tassign(
       this.state,
       {
-        languages : this.state.languages.filter( (lang) => {
-          return lang.id !== languageToBeRemoved.id;
-        })
+        languages : this.state.languages.filter( (lang) => lang.id !== languageToBeRemoved.id)
       }
-    )
+    );
   }
 
   editLanguages() {
     return tassign(
       this.state,
       {
-        languages : this.action.languagesAfterEdition
+        languages : this.action.payload.existingLanguages
       }
     )
+  }
+  
+  addLanguage() {
+    
+    return this.state;
   }
 }
 
@@ -62,6 +63,8 @@ export function LanguagesReducer(
       return actions.removeLanguage();
     case LOAD_LANGUAGES: 
       return actions.loadLanguages();
+    case ADD_LANGUAGE: 
+      return actions.addLanguage();
     default:
       return state;
   }

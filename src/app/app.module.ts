@@ -8,18 +8,27 @@ import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { combineReducers } from 'redux';
 import { IAppState, rootReducer } from './store';
 
-/** ERRORS */
+// FIREBASE
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /** COMPONENTS */
 import { AppComponent } from './app.component';
+
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { AnotherPlaceholderComponent } from './components/another-placeholder/another-placeholder.component';
+
 import { LanguagesComponent } from './components/languages/languages.component';
 import { ConfigComponent } from './components/config/config.component';
+import { LoginComponent } from './components/user/login/login.component';
 /** SERVICES */
 import { LanguagesService } from './components/languages/languages.service';
+import { AuthService } from './components/user/auth.service';
 /** DIRECTIVES */
 import { LanguageInputDirective } from './directives/language-input.directive';
+
+// MISC VARIABLES
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -27,26 +36,32 @@ import { LanguageInputDirective } from './directives/language-input.directive';
     AppComponent,
     ConfigComponent,
     LanguagesComponent,
+    LanguageInputDirective,
+    LoginComponent,
     PlaceholderComponent,
     AnotherPlaceholderComponent,
-    LanguageInputDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgReduxModule,
     RouterModule.forRoot([
-      { path: 'config', component: ConfigComponent }
-    ])
+      { path: 'config', component: ConfigComponent },
+      { path: 'login', component: LoginComponent },
+    ]),
+    NgReduxModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [
-    LanguagesService
+    LanguagesService,
+    AuthService,
+    AngularFireAuth,
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension) {
-    let enhancers = isDevMode() ? [devTools.enhancer()] : [];
+    const enhancers = isDevMode() ? [devTools.enhancer()] : [];
 
     ngRedux.configureStore(rootReducer, undefined, [], enhancers);
   }
