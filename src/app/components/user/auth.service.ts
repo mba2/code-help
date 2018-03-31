@@ -56,8 +56,10 @@ export class AuthService {
 
       this.user$ = afAuth.authState;
       this.user$
-        .subscribe(response=> {
-          this.getUserInfo(response.toJSON());
+        .subscribe(response => {
+          if (response) { 
+            this.getUserInfo(response.toJSON());
+          }
         });
   }
 

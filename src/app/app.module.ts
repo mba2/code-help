@@ -14,7 +14,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 /** COMPONENTS */
 import { AppComponent } from './app.component';
-
+import { HomeComponent } from './components/home/home.component';
 import { PlaceholderComponent } from './components/placeholder/placeholder.component';
 import { AnotherPlaceholderComponent } from './components/another-placeholder/another-placeholder.component';
 
@@ -29,24 +29,28 @@ import { LanguageInputDirective } from './directives/language-input.directive';
 
 // MISC VARIABLES
 import { environment } from '../environments/environment';
-
+import { HeaderComponent } from './components/header/header.component';
+import { AuthGuardService } from './general-services/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     ConfigComponent,
     LanguagesComponent,
     LanguageInputDirective,
     LoginComponent,
     PlaceholderComponent,
     AnotherPlaceholderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgReduxModule,
     RouterModule.forRoot([
-      { path: 'config', component: ConfigComponent },
+      { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
+      { path: 'config', component: ConfigComponent, canActivate: [AuthGuardService] },
       { path: 'login', component: LoginComponent },
     ]),
     NgReduxModule,
@@ -54,8 +58,9 @@ import { environment } from '../environments/environment';
   ],
   providers: [
     LanguagesService,
-    AuthService,
     AngularFireAuth,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

@@ -31,7 +31,6 @@ export class AppComponent {
     private afAuth: AngularFireAuth,
     private store: NgRedux<IAppState>) {
       this.loadUserInfo();
-
   }
 
 
