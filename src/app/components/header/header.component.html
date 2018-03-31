@@ -1,0 +1,8 @@
+<header *ngIf="user$ | async as user">
+  <p class="user-name">
+  {{ user?.displayName }}
+  </p>
+  <p class="user-photo">
+    {{ user?.photo }}
+  </p>
+</header>

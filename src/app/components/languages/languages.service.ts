@@ -10,7 +10,7 @@ import "rxjs/add/operator/toPromise";
 @Injectable()
 
 export class LanguagesService {
-  private languagesUrl = 'http://www.mariobrusarosco.com/code-help/api/languages/?user=';
+  private languagesEndpoint = 'http://www.mariobrusarosco.com/code-help/api/languages/';
         // const httpOptions = {
       //   headers: new HttpHeaders({
       //     'Content-Type':  'application/json',
@@ -22,13 +22,24 @@ export class LanguagesService {
 
   constructor(
     // private db: AngularFireDatabase,
-    private http: HttpClient ) { }
+    private http: HttpClient ) { 
+
+
+    }
     
     public loadLanguagesInfo(){
       return this.http.get('https://my-json-server.typicode.com/mba2/code-help/languages').toPromise();
     }
     
     public getUserLanguages(userId: string) {
-      return this.http.get(this.languagesUrl + JSON.stringify(userId)).toPromise();
+      return this.http.get(this.languagesEndpoint + '?user=' + JSON.stringify(userId)).toPromise();
+    }
+
+    public updateLanguages(languagesToUpdate) {
+
+      return this.http.patch(
+        '?update=' + this.languagesEndpoint + JSON.stringify(languagesToUpdate),
+          null
+      ).toPromise();
     }
 }

@@ -1,3 +1,4 @@
+import { LanguagesService } from './../languages/languages.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,8 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ConfigComponent implements OnInit {
 
-  constructor() { 
-
+  constructor(private lang_service: LanguagesService) { 
   }
 
   ngOnInit() {
