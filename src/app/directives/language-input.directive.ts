@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input, HostListener } from "@angular/core";
   selector: '[languageInput]'
 })
 export class LanguageInputDirective {
-  @Input("languageInput") data: any;
+  @Input("languageInput") metadata: any;
 
   constructor(public elem : ElementRef) { }
 }

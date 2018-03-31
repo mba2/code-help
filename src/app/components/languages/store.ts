@@ -39,7 +39,7 @@ export class LanguagesActions {
     return tassign(
       this.state,
       {
-        languages : this.action.payload.existingLanguages
+        languages : this.action.payload
       }
     )
   }

@@ -27,16 +27,12 @@ export class LanguagesService {
 
     }
     
-    public loadLanguagesInfo(){
-      return this.http.get('https://my-json-server.typicode.com/mba2/code-help/languages').toPromise();
-    }
     
     public getUserLanguages(userId: string) {
       return this.http.get(this.languagesEndpoint + '?user=' + JSON.stringify(userId)).toPromise();
     }
 
     public updateLanguages(languagesToUpdate) {
-
       return this.http.patch(
         '?update=' + this.languagesEndpoint + JSON.stringify(languagesToUpdate),
           null
