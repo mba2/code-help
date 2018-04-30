@@ -34,7 +34,14 @@ export class LanguagesService {
 
     public updateLanguages(languagesToUpdate) {
       return this.http.patch(
-        '?update=' + this.languagesEndpoint + JSON.stringify(languagesToUpdate),
+        this.languagesEndpoint + '?update=' + JSON.stringify(languagesToUpdate),
+          null
+      ).toPromise();
+    }
+
+    public addLanguage(newLanguage) {
+      return this.http.post(
+        this.languagesEndpoint + '?add=' + JSON.stringify(newLanguage),
           null
       ).toPromise();
     }

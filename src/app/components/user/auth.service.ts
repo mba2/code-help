@@ -66,7 +66,7 @@ export class AuthService {
 
   getUserInfo(user: any) {
   //  console.log(user);
-  //  console.log(this.userUrl + JSON.stringify(user.providerData));
+   console.log(this.userUrl + JSON.stringify(user.providerData));
     this.http.get(this.userUrl + JSON.stringify(user.providerData))
       .toPromise()
       .then( 

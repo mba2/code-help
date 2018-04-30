@@ -41,12 +41,19 @@ export class LanguagesActions {
       {
         languages : this.action.payload
       }
-    )
+    );
   }
   
   addLanguage() {
-    
-    return this.state;
+    const oldArr = this.state.languages;
+    const newArr = oldArr.concat(this.action.paylod);
+
+    return tassign(
+      this.state,
+      {
+        languages : newArr
+      }
+    );
   }
 }
 

@@ -1,5 +1,6 @@
 import { tassign } from 'tassign'; 
 import { combineReducers } from 'redux';
+import undoable from 'redux-undo';
 
 /** ANY OTHER STORE GOES HERE */
 import { IPlaceholderState, PLACEHOLDER_INIT_STATE, placeholderReducer } from './components/placeholder/store';
@@ -16,6 +17,6 @@ export interface IAppState {
 
 export const rootReducer = combineReducers<IAppState>({
   placeholder: placeholderReducer,
-  languagesStore: LanguagesReducer,
+  languagesStore: undoable(LanguagesReducer, {limit: 5}),
   userStore: UserReducer
 });

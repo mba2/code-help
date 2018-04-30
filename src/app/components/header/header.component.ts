@@ -16,13 +16,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // this.userName$.subscribe( user => {
-    //   console.log(user);
-    // });
-    // this.user$.toPromise()
-    //   .then( user => {
-    //     console.log(user);
-    //   });
+    this.user$.toPromise()
+      .then( user => {
+        console.log(user);
+      });
   }
 
 }

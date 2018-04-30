@@ -1,0 +1,39 @@
+.user-navbar {
+  width: 80vw;
+  height: 100vh;
+  background-color: red;
+
+  .header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background: green;
+  }
+  
+  .user-name {
+    width: 70%;
+    text-align: center;
+  }
+  .user-photo {
+    width: 30%;
+  }
+
+  .menu {
+
+  }
+  .menu-list {
+
+  }
+  .menu-link {
+    display: flex;
+  }
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+    border:1px solid black;
+  }
+  .menu-label {
+
+  }
+}
+

@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 /** ANGULAR`S CORE */
 import { Component, OnInit, AfterViewInit , Input, ViewChild, ElementRef, ViewChildren, QueryList } from '@angular/core';
 /** DIRECTIVES */
@@ -11,6 +12,9 @@ import { NgRedux, select } from 'ng2-redux';
 /** STORE(S) AND ACTIONS */
 import { IAppState } from '../../store';
 import { REMOVE_LANGUAGE, LOAD_LANGUAGES, EDIT_LANGUAGES, ADD_LANGUAGE } from './actions';
+
+import { ActionCreators } from 'redux-undo';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 interface ILanguage {
   LANGUAGE_ID: string;
@@ -28,16 +32,23 @@ interface ILanguage {
 
 export class LanguagesComponent implements OnInit, AfterViewInit {
     /** OBSERVABLE FOR ALL LANGUAGES IN THE STORE */
-  @select(['languagesStore', 'languages']) avaliableLangs$: Observable<any>;
+  @select(['languagesStore', 'present', 'languages']) avaliableLangs$: Observable<any>;
     /** REFERENCES FOR ALL LANGUAGES INPUT FIELDS */
   @ViewChildren(LanguageInputDirective) languagesAsInputs: QueryList<LanguageInputDirective>;
   
   private inEditMode = false;
   private inNewLanguageMode = false;
+  private userId: string;
 
   constructor(
+    public afAuth: AngularFireAuth, 
     private store: NgRedux<IAppState>,
-    private service: LanguagesService) { }
+    private service: LanguagesService) {
+      this.afAuth.authState
+        .subscribe(user => {
+            this.userId = user.providerData[0].uid;
+        });
+    }
 
   private removeLang(languageToBeRemoved) {
     this.store.dispatch( { type: REMOVE_LANGUAGE, languageToBeRemoved });
@@ -57,18 +68,59 @@ export class LanguagesComponent implements OnInit, AfterViewInit {
     return arr;
   }
 
+  private getNewLanguageInput() {
+    return this.languagesAsInputs.filter(lang => {
+      return lang.metadata.type === 'new-lang';
+    });
+  }
+
   private saveEdition() {
-    this.store.dispatch( { type: EDIT_LANGUAGES, payload: this.getCurrentLanguagesInputs() });
+    const languagesToUṕdate = this.getCurrentLanguagesInputs();
+    this.store.dispatch( { type: EDIT_LANGUAGES, payload: languagesToUṕdate });
+    this.service.updateLanguages(languagesToUṕdate)
+      .then(
+        () => {
+          console.log('s')
+        }
+      )
+      .catch((e) => {
+        console.log('test');
+        console.log(e);
+        // this.store.dispatch(ActionCreators.undo())
+      });
     this.inEditMode = false;
   }
 
   private saveNewLanguage() {
+    const input = this.getNewLanguageInput()[0];
+    const value = input.elem.nativeElement.value;
+    const userId = input.metadata.USER_ID;
+
+    const newLanguage = {
+      'LANGUAGE_ID': null,
+      'USER_ID': userId,
+      'LANGUAGE_NAME': value
+    }
+
+    console.log(newLanguage);
+    this.store.dispatch( { type: ADD_LANGUAGE, payload: newLanguage });
+    this.service.addLanguage(newLanguage)
+    .then(
+      (s) => {
+        console.log('s', s);
+      }
+    )
+    .catch((e) => {
+      console.log('erroe');
+      console.log(e);
+      // this.store.dispatch(ActionCreators.undo())
+    });
+
     // const newLanguageRef = this.getAllLanguagesInputs()['newLanguage'];
     // const newLanguage = newLanguageRef.elem.nativeElement.value;
 
     // Promise.resolve(
     //   // this.service
-    //   this.store.dispatch( { type: ADD_LANGUAGE, payload: newLanguage })
     // ).then(e => {
     //   this.service.loadLanguagesInfo()
     //   .then( (data) => {
@@ -76,7 +128,7 @@ export class LanguagesComponent implements OnInit, AfterViewInit {
     //   })
     // })
     // this.store.dispatch( { type: ADD_LANGUAGE, payload: this.getAllLanguagesInputs() });
-    // this.inNewLanguageMode = false;
+    this.inNewLanguageMode = false;
   }
 
   ngOnInit() {

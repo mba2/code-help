@@ -31,6 +31,7 @@ import { LanguageInputDirective } from './directives/language-input.directive';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthGuardService } from './general-services/auth-guard.service';
+import { NavbarComponent } from './components/user/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AuthGuardService } from './general-services/auth-guard.service';
     LoginComponent,
     PlaceholderComponent,
     AnotherPlaceholderComponent,
-    HeaderComponent
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
